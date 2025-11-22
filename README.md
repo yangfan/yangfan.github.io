@@ -231,6 +231,7 @@ Run the test yourself: [Google Lighthouse PageSpeed Insights](https://pagespeed.
 [![Google Lighthouse PageSpeed Insights](lighthouse_results/mobile/pagespeed.svg)](https://htmlpreview.github.io/?https://github.com/yangfan/yangfan.github.io/blob/main/lighthouse_results/mobile/yangfan_github_io_.html)
 
 Run the test yourself: [Google Lighthouse PageSpeed Insights](https://pagespeed.web.dev/analysis/https-yangfan-github-io/n3vq1vyy2v?form_factor=mobile)
+
 ## Table Of Contents
 
 <!--ts-->
