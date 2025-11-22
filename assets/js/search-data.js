@@ -94,17 +94,6 @@ ninja.data = [{
             window.location.href = "/blog/2024/photo-gallery/";
           
         },
-      },{id: "post-google-gemini-updates-flash-1-5-gemma-2-and-project-astra",
-        
-          title: 'Google Gemini updates: Flash 1.5, Gemma 2 and Project Astra <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
-        
-        description: "We’re sharing updates across our Gemini family of models and a glimpse of Project Astra, our vision for the future of AI assistants.",
-        section: "Posts",
-        handler: () => {
-          
-            window.open("https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/", "_blank");
-          
-        },
       },{id: "post-a-post-with-tabs",
         
           title: "a post with tabs",
@@ -440,6 +429,18 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
+          section: "News",},{id: "news-our-paper-on-chance-constrained-simultaneous-path-planning-and-task-assignment-for-multiple-robots-with-stochastic-path-costs-was-accepted-for-publication-by-icra-2020",
+          title: 'Our paper on Chance Constrained Simultaneous Path Planning and Task Assignment for Multiple...',
+          description: "",
+          section: "News",},{id: "news-our-paper-on-algorithm-for-multi-robot-chance-constrained-generalized-assignment-problem-with-stochastic-resource-consumption-was-accepted-by-iros-2020",
+          title: 'Our paper on Algorithm for Multi-robot Chance-constrained Generalized Assignment Problem with Stochastic Resource...',
+          description: "",
+          section: "News",},{id: "news-our-paper-on-chance-constrained-simultaneous-path-planning-and-task-assignment-with-bottleneck-objective-was-accepted-for-publication-by-icra-2021",
+          title: 'Our paper on Chance Constrained Simultaneous Path Planning and Task Assignment with Bottleneck...',
+          description: "",
+          section: "News",},{id: "news-join-navigation-team-of-midea-emerging-technology-center-metc",
+          title: 'Join Navigation team of Midea Emerging Technology Center (METC).',
+          description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
           description: "with background image",
@@ -490,42 +491,35 @@ ninja.data = [{
         title: 'CV',
         section: 'Socials',
         handler: () => {
-          window.open("/assets/pdf/example_pdf.pdf", "_blank");
+          window.open("/assets/pdf/cv_fanyang.pdf", "_blank");
         },
       },{
         id: 'social-email',
         title: 'email',
         section: 'Socials',
         handler: () => {
-          window.open("mailto:%79%6F%75@%65%78%61%6D%70%6C%65.%63%6F%6D", "_blank");
+          window.open("mailto:%66%61%6E%79%61%6E%67.%73%62%75@%67%6D%61%69%6C.%63%6F%6D", "_blank");
         },
       },{
-        id: 'social-inspire',
-        title: 'Inspire HEP',
+        id: 'social-leetcode',
+        title: 'LeetCode',
         section: 'Socials',
         handler: () => {
-          window.open("https://inspirehep.net/authors/1010907", "_blank");
+          window.open("https://leetcode.com/u/BruteForceFrog/", "_blank");
         },
       },{
-        id: 'social-rss',
-        title: 'RSS Feed',
+        id: 'social-linkedin',
+        title: 'LinkedIn',
         section: 'Socials',
         handler: () => {
-          window.open("/feed.xml", "_blank");
+          window.open("https://www.linkedin.com/in/fanyang-sbu", "_blank");
         },
       },{
         id: 'social-scholar',
         title: 'Google Scholar',
         section: 'Socials',
         handler: () => {
-          window.open("https://scholar.google.com/citations?user=qc6CJjYAAAAJ", "_blank");
-        },
-      },{
-        id: 'social-custom_social',
-        title: 'Custom_social',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://www.alberteinstein.com/", "_blank");
+          window.open("https://scholar.google.com/citations?user=aLRy-NkAAAAJ&hl=en&authuser=2", "_blank");
         },
       },{
       id: 'light-theme',
