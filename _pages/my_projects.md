@@ -8,6 +8,8 @@ nav_order: 1
 display_categories:
   - title: GINS
     single_col: false
+  - title: Computer Vision
+    single_col: false
   - title: work
     single_col: false
   - title: fun

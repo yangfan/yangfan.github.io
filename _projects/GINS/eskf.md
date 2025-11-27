@@ -176,6 +176,12 @@ As we discussed at the beginning, the trajectory drift significantly.
 - [Glog](https://github.com/google/glog)
 - [Gflags](https://github.com/gflags/gflags)
 
+### Repository
+
+<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
+  {% include repository/repo.liquid repository="yangfan/eskf_imu" %}
+</div>
+
 ### References
 
 1. [Quaternion kinematics for the error-state Kalman filter

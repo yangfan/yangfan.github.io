@@ -1,0 +1,107 @@
+---
+---
+
+@INPROCEEDINGS{Yang2021,
+  abbr={ICRA},
+  author={Fan Yang and Nilanjan Chakraborty},
+  booktitle={2021 IEEE International Conference on Robotics and Automation (ICRA)}, 
+  title={Chance Constrained Simultaneous Path Planning and Task Assignment with Bottleneck Objective}, 
+  abstract={We present a novel algorithm for combined taskassignment and path planning on a roadmap with stochasticcosts. In this problem, the initially unassigned robots and tasksare located at known positions in a roadmap. We want to assigna unique task to each robot and compute a path for the robot togo to the task location. Given the means and variances of travelcost, our goal is to develop algorithms that guarantee that foreach robot, with high probability, the total travel cost is belowa minimum value in any realization of the stochastic travelcosts. We prove that the solution can be obtained by solving(a) a chance-constrained shortest path problems for all robot-task pairs and (b) a linear bottleneck assignment problem inwhich the cost of an assignment is equal to the optimal objectivevalue of the former problem. We propose algorithms for solvingthe chance-constrained shortest path problem either optimallyor approximately by solving a number of deterministic shortestpath problems that minimize some linear combination of meansand variances of edge costs. We present simulation results onrandomly generated networks and data to demonstrate that ouralgorithm is scalable with the number of robots (or tasks) andthe size of the network.},
+  year={2021},
+  html={https://ieeexplore.ieee.org/document/9561276},
+  pdf={ICRA2021.pdf},}
+
+@INPROCEEDINGS{Yang2020iros,
+  abbr={IROS},
+  author={Fan Yang and Nilanjan Chakraborty},
+  booktitle={2020 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}, 
+  title={Algorithm for Multi-robot Chance-constrained Generalized Assignment Problem with Stochastic Resource Consumption}, 
+  year={2020},
+  pages={4329-4336},
+  abstract={We present a novel algorithm for the multi-robot generalized assignment problem (GAP) with stochastic resource consumption. In this problem, each robot has a resource (e.g., battery life) constraint and it consumes a certain amount of resource to perform a task. In practice, the resource consumed for performing a task can be uncertain. Therefore, we assume that the resource consumption is a random variable with known mean and variance. The objective is to find an assignment of the robots to tasks that maximizes the team payoff. Each task is assigned to at most one robot and the resource constraint for each robot has to be satisfied with very high probability. We formulate the problem as a chance-constrained combinatorial optimization problem and call it the chance-constrained generalized assignment problem (CC-GAP). This problem is an extension of the deterministic generalized assignment problem, which is a NP-hard problem. We design an iterative algorithm for solving CC-GAP in which each robot maximizes its own objective by solving a chance-constrained knapsack problem in an iterative manner. The approximation ratio of our algorithm is (1+α), assuming that the deterministic knapsack problem is solved by an α-approximation algorithm. We present simulation results to demonstrate that our algorithm is scalable with the number of robots and tasks.},
+  doi={10.1109/IROS45743.2020.9341726},
+  html={https://ieeexplore.ieee.org/document/9341726},
+  pdf={IROS2020.pdf},}
+
+@INPROCEEDINGS{Yang2020,
+  abbr={ICRA},
+  author={Fan Yang and Nilanjan Chakraborty},
+  booktitle={2020 IEEE International Conference on Robotics and Automation (ICRA)}, 
+  title={Chance Constrained Simultaneous Path Planning and Task Assignment for Multiple Robots with Stochastic Path Costs}, 
+  abstract={We present a novel algorithm for simultaneous task assignment and path planning on a graph (or roadmap) with stochastic edge costs. In this problem, the initially unassigned robots and tasks are located at known positions in a roadmap. We want to assign a unique task to each robot and compute a path for the robot to go to its assigned task location. Given the mean and variance of travel cost of each edge, our goal is to develop algorithms that, with high probability, the total path cost of the robot team is below a minimum value in any realization of the stochastic travel costs. We formulate the problem as a chance-constrained simultaneous task assignment and path planning problem (CC-STAP). We prove that the optimal solution of CC-STAP can be obtained by solving a sequence of deterministic simultaneous task assignment and path planning problems in which the travel cost is a linear combination of mean and variance of the edge cost. We show that the deterministic problem can be solved in two steps. In the first step, robots compute the shortest paths to the task locations and in the second step, the robots solve a linear assignment problem with the costs obtained in the first step. We also propose a distributed algorithm that solves CC-STAP near-optimally. We present simulation results on randomly generated networks and data to demonstrate that our algorithm is scalable with the number of robots (or tasks) and the size of the network.},
+  year={2020},
+  html={https://ieeexplore.ieee.org/abstract/document/9197354},
+  pdf={ICRA2020.pdf},
+  pages={6661-6667},}
+
+  @INPROCEEDINGS{Yang2018,
+  abbr={ICRA},
+  author={Fan Yang and Nilanjan Chakraborty}, 
+  booktitle={2018 IEEE International Conference on Robotics and Automation (ICRA)}, 
+  title={Algorithm for Optimal Chance Constrained Knapsack Problem with Applications to Multi-Robot Teaming}, 
+  year={2018}, 
+  pages={1043-1049}, 
+  ISSN={2577-087X}, 
+  month={May},
+  html={https://ieeexplore.ieee.org/document/8461040},
+  abstract={Motivated by applications in multirobot team selection, in this paper, we present a novel algorithm for computing optimal solution of chance-constrained 0-1 knapsack problem. In this variation of the knapsack problem, the objective function is deterministic but the weights of the items are stochastic and therefore the knapsack constraint is stochastic. We convert the chance-constrained knapsack problem to a two-dimensional discrete optimization problem on the variance-mean plane, where each point on the plane can be identified with an assignment of items to the knapsack. By exploiting the geometry of the non-convex feasible region of the chance-constrained knapsack problem in the variance-mean plane, we present a novel deterministic technique to find an optimal solution by solving a sequence of deterministic knapsack problems (called risk-averse knapsack problem). We apply our algorithm to a multirobot team selection problem to cover a given route, where the length of the route is much larger than the length each individual robot can fly and the length that an individual robot can fly is a random variable (with known mean and variance). We present simulation results on randomly generated data to demonstrate that our approach is scalable with both the number of robots and increasing uncertainty of the distance an individual robot can travel.},
+  pdf={ICRA2018.pdf},
+  } 
+
+  @INPROCEEDINGS{Yang17,
+  abbr={ICRA},
+  author={Fan Yang and Nilanjan Chakraborty}, 
+  booktitle={2017 IEEE International Conference on Robotics and Automation (ICRA)}, 
+  title={Algorithm for Optimal Chance Constrained Linear Assignment}, 
+  year={2017}, 
+  pages={801-808}, 
+  month={May},
+  html={https://ieeexplore.ieee.org/document/7989099},
+  abstract={In this paper, we design provably-good algorithms for task allocation in multi-robot systems in the presence of payoff uncertainty. We consider a group of robots that has to perform a given set of tasks where each robot performs at most one task. The payoffs of the robots doing the tasks are assumed to be Gaussian random variables with known mean and variances. The total payoff of the robots is a sum of the individual payoffs of all the robots. The goal is to find an assignment with maximum payoff that can be achieved with a specified probability irrespective of the realization of the random variable. This problem can be formulated as a chance constrained combinatorial optimization problem. We develop a novel deterministic technique to solve this chance constrained optimization problem that ensures that the chance constraints are always satisfied. Adopting the notion of risk-aversion from the economics literature, we formulate a risk-averse task allocation problem, which is a deterministic integer optimization problem. We prove that by repeatedly solving the risk-averse task allocation problem using a one-dimensional search on the risk aversion parameter we find a solution for the chance constrained optimization formulation of the linear assignment problem with uncertain payoffs. We provide simulation results on randomly generated data to demonstrate our approach and also compare our method to existing approaches.},
+  pdf={ICRA2017.pdf},
+  }
+
+
+  @INPROCEEDINGS{Yang2019abs,
+  abbr={MRS},
+  author={Fan Yang and Nilanjan Chakraborty},
+  booktitle={2019 International Symposium on Multi-Robot and Multi-Agent Systems (MRS)}, 
+  title={Multirobot Simultaneous Path Planning and Task Assignment on Graphs with Stochastic Costs}, 
+  year={2019},
+  pages={86-88},
+  html={https://ieeexplore.ieee.org/document/8901052},
+  pdf={MRS2019.pdf},
+  poster={MRS19poster.pdf},
+  }
+
+  @INPROCEEDINGS{NERC2018abs,
+  abbr={NERC},
+  author={Fan Yang and Nilanjan Chakraborty},
+  booktitle={Northeast Robotics Colloquium}, 
+  title={Multi-robot Team Formation Under Uncertain Environment}, 
+  year={2018},
+  poster={NERCposter.pdf},
+  }
+
+  @INPROCEEDINGS{FWCG2017abs,
+  abbr={FWCG},
+  author={Fan Yang and Nilanjan Chakraborty},
+  booktitle={27th Annual Fall Workshop on Computational Geometry}, 
+  title={Algorithm for Optimal Chance Constrained Knapsack with
+  Applications to Multi-robot Teaming}, 
+  year={2017},
+  pdf={FWCG2017.pdf}
+  }
+
+  @phdthesis{Yang2020Thesis,
+  abbr={PhD Thesis},
+  author = {Fan Yang},
+  title = {Algorithms for Chance-constrained Multi-robot Task Allocation},
+  publisher = {Stony Brook University},
+  address = {Stony Brook, NY},
+  year = {2020},
+  abstract={Coordinating multi-robot systems (MRS) have a wide range of application domains including collaborative autonomous manufacturing, automated transport of goods in warehouses and factory floors, environmental monitoring, search and rescue, surveillance, and sensing data collection.
+  Two fundamental problems arise naturally in the autonomous operation of the multi-robot system: (a) multi-robot task allocation; (b) multi-robot path planning. Generally speaking, multi-robot task allocation solves the following problem: given a set of robots and tasks with each robot obtaining a certain payoff for each task, compute a subset of tasks for each robot such that a team performance criterion is optimized subject to a set of constraints on the tasks and/or the robots. Multi-robot path planning solves the following problem: given the initial positions of a set of robots and target positions of the spatially distributed tasks, compute a collision-free path for each robot from its initial position to its target position.
+
+  Most current works on multi-robot task allocation consider as deterministic parameters like robot-task payoffs, resource consumption of robots performing tasks. However, these parameters may not be known exactly in practice, especially in the open environment in which there are other (uncontrolled) moving entities like humans or human-operated vehicles that occupy the space. One goal of this thesis is to formulate multi-robot task allocation problems with uncertain parameters and develop solution algorithms for them. Further, in the extant literature, task allocation and path planning problems are commonly considered separately. In particular, it is assumed in task allocation that there are planned paths for all robot-task assignments and thus the payoff or the resource consumption to perform a task is available. In path planning, it is assumed that the tasks are assigned to robots and target positions are thus specified. When both problems have to be solved, the decoupling approach (solving two problems separately) is usually used. Although conceptually convenient, the decoupling approach may lead to sub-optimal solutions. Therefore another goal of this thesis is to simultaneously compute the allocation of tasks to robots as well as plan the path from the initial position of robots to the destinations.},
+  }
