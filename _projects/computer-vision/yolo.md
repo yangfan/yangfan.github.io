@@ -3,7 +3,7 @@ layout: page
 title: Object Detection using YOLO model
 description: |
   In this project, a real-time object detection application is created for the self-driving car using YOLO model. Given images taken from the car-mounted camera, the program outputs a list of bounding boxes indicating not only the position and size of objects but also the class of objects. In particular, a Deep CNN is used to convert the preprocessed image to an encoding, from which the bounding boxes with high probability is computed by non-max suppression.
-img: projects/computer-vision/YOLO/assets/img/yolo_demo.gif
+img: /assets/img/projects/computer-vision/YOLO/yolo_demo.gif
 importance: 2
 category: Computer Vision
 github: https://github.com/yangfan/object-detection
@@ -21,7 +21,7 @@ It is assumed that a camera mounted on the car takes pictures of the road every 
 <div class="row justify-content-center">
     <div class="col">
         <div class="w-50 mx-auto" style="background-color: white;">
-            <img class="img-fluid" src="{{ 'projects/computer-vision/YOLO/assets/img/yolo_demo.gif'| relative_url }}" alt=""/>
+            <img class="img-fluid" src="{{ '/assets/img/projects/computer-vision/YOLO/yolo_demo.gif'| relative_url }}" alt=""/>
         </div>
     </div>
 </div>
@@ -39,7 +39,7 @@ The Encoding architecture for YOLO is shown as following:
 <div class="row justify-content-center">
     <div class="col">
         <div class="w-75 mx-auto" style="background-color: white;">
-            <img class="img-fluid" src="{{ 'projects/computer-vision/YOLO/assets/img/architecture.png'| relative_url }}" alt=""/>
+            <img class="img-fluid" src="{{ '/assets/img/projects/computer-vision/YOLO/architecture.png'| relative_url }}" alt=""/>
         </div>
     </div>
 </div>
@@ -55,7 +55,7 @@ To reduce the number of boxes in the output, we can remove bounding box with sco
 <div class="row justify-content-center">
     <div class="col">
         <div class="w-50 mx-auto" style="background-color: white;">
-            <img class="img-fluid" src="{{ 'projects/computer-vision/YOLO/assets/img/anchor_map.png'| relative_url }}" alt=""/>
+            <img class="img-fluid" src="{{ '/assets/img/projects/computer-vision/YOLO/anchor_map.png'| relative_url }}" alt=""/>
         </div>
     </div>
 </div>
