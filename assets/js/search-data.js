@@ -9,12 +9,12 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-blog",
-          title: "blog",
-          description: "",
+  },{id: "nav-projects",
+          title: "projects",
+          description: "A growing collection of my personal projects.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/blog/";
+            window.location.href = "/projects/";
           },
         },{id: "nav-publications",
           title: "publications",
@@ -23,12 +23,12 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "nav-projects",
-          title: "projects",
-          description: "A growing collection of your cool projects.",
+        },{id: "nav-blog",
+          title: "blog",
+          description: "",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/projects/";
+            window.location.href = "/blog/";
           },
         },{id: "nav-repositories",
           title: "repositories",
@@ -43,20 +43,6 @@ ninja.data = [{
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
-          },
-        },{id: "nav-teaching",
-          title: "teaching",
-          description: "Materials for courses you taught. Replace this text with your description.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/teaching/";
-          },
-        },{id: "nav-people",
-          title: "people",
-          description: "members of the lab or group",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/people/";
           },
         },{id: "post-a-post-with-plotly-js",
         
@@ -472,6 +458,21 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
+            },},{id: "projects-gnss-odometer-imu-integrated-navigation-system-based-on-error-state-kalman-filter",
+          title: 'GNSS/Odometer/IMU integrated navigation system based on error state Kalman Filter',
+          description: "This project implements a simplified GNSS/Odometer/IMU integrated navigation system with error state Kalman Filter. Three types of data: GNSS, Odometry and IMU are used for the sensor fusion. The error state Kalman Filter is used to estimate the state of the system which includes position, rotation, velocity, bias of accerometer, bias of gyroscope and gravity.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/GINS/eskf/";
+            },},{id: "projects-bag-of-visual-word-for-finding-similar-images",
+          title: 'Bag of Visual Word for Finding Similar Images',
+          description: "This project creates a C++ application that finds similar looking images using the idea of the bag of visual words. Given a database of images and a query image, the program will find N most similar database images to the query image. In robotics applications, finding similar image can provide additional information for determining the correspondence of the observation especially when the map features cannot be uniquely identified by range sensors like laser.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/computer-vision/bow/";
+            },},{id: "projects-object-detection-using-yolo-model",
+          title: 'Object Detection using YOLO model',
+          description: "In this project, a real-time object detection application is created for the self-driving car using YOLO model. Given images taken from the car-mounted camera, the program outputs a list of bounding boxes indicating not only the position and size of objects but also the class of objects. In particular, a Deep CNN is used to convert the preprocessed image to an encoding, from which the bounding boxes with high probability is computed by non-max suppression.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/computer-vision/yolo/";
             },},{
         id: 'social-cv',
         title: 'CV',
@@ -485,6 +486,13 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("mailto:%66%61%6E%79%61%6E%67.%73%62%75@%67%6D%61%69%6C.%63%6F%6D", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/yangfan", "_blank");
         },
       },{
         id: 'social-leetcode',
