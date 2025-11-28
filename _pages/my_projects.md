@@ -12,6 +12,8 @@ display_categories:
     single_col: false
   - title: Localization
     single_col: false
+  - title: Mapping & Planning
+    single_col: false
   - title: Computer Vision
     single_col: false
 horizontal: false
