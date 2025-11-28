@@ -14,6 +14,8 @@ display_categories:
     single_col: false
   - title: Mapping & Planning
     single_col: false
+  - title: ROS
+    single_col: true
   - title: Computer Vision
     single_col: false
 horizontal: false
