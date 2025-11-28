@@ -7,11 +7,6 @@ img: /assets/img/projects/SLAM/UKF-slam/ukf_slam.gif
 importance: 2
 category: SLAM
 github: https://github.com/yangfan/probabilitics-robotics/tree/master/UKF_SLAM
-images:
-  - path:
-    column:
-    text:
-not_empty: true
 ---
 
 Generally speaking, the Kalman filters require linear motion model and sensor model to perform the transformation of Gaussian distribution. In EKF, the first order Taylor expansion is used to linearize the functions at the mean of the belief. An alternative linearization method, called unscented transform is used in the Unscented Kalman Filter. In particular, the UKF extracts a set of points with weights from the Gaussian and passes those points through the nonlinear function. The transformed Gaussian can be recovered from those returned points.

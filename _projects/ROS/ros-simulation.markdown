@@ -9,11 +9,6 @@ img: /assets/img/projects/ROS/multi-nav.gif
 importance: 1
 category: ROS
 github: https://github.com/yangfan/ros_sim
-images:
-  - path:
-    column:
-    text:
-not_empty: true
 ---
 
 In this project, I performed the SLAM and Navigation in Gazebo using ROS. In SLAM simulation, robots creates 2D occupancy map by exploring the unknown environment. In Navigation simulation, robots move to the specified pose without the teleoperation, given the map created in the SLAM simulation.

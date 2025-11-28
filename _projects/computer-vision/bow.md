@@ -7,11 +7,6 @@ img: /assets/img/projects/computer-vision/bow/bow.png
 importance: 1
 category: Computer Vision
 github: https://github.com/yangfan/Bag-of-visual-words
-images:
-  - path:
-    column:
-    text:
-not_empty: true
 ---
 
 A key problem for range-bearing sensors is known as the data association problem, which arises when landmarks cannot be uniquely identified. Therefore some residual uncertainty exists with regards to the identity of a landmark. A similar problem happens in the graph construction of the GraphSLAM (see more details in [here]({% link _pages/404.md %})). We need to match the observation to obtain the constraint. The problem arises when only the range-bearing sensor is used. For example, the robot may not distinguish the laser range data for the corridors because the corridors may look exactly the same from a laser sensor.

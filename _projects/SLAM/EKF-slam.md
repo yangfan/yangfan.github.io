@@ -7,11 +7,6 @@ img: /assets/img/projects/SLAM/EKF-slam/ekf_slam.gif
 importance: 1
 category: SLAM
 github: https://github.com/yangfan/probabilitics-robotics/tree/master/EKF_SLAM
-images:
-  - path:
-    column:
-    text:
-not_empty: true
 ---
 
 The SLAM problem is one of the most fundamental problems in robotics. SLAM problems arise when both map of the environment and the pose of robot are not available. Robots are only given the measurement $$z_{1:t}$$ and controls $$u_{1:t}$$. In SLAM problem, the robot should learn a map of the environment and simultaneously estimate its pose in the environment.

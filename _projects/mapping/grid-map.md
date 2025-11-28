@@ -7,11 +7,6 @@ img: /assets/img/projects/mapping/ogm/cover.gif
 importance: 1
 category: Mapping & Planning
 github: https://github.com/yangfan/probabilitics-robotics/tree/master/Grid_map
-images:
-  - path:
-    column:
-    text:
-not_empty: true
 ---
 
 Map is a crucial part of the autonomous robot system. Many applications like localization, path planning and navigation rely on the map. In this project, the occupancy grid mapping algorithm is impelmented to construct a map with assumption that the robot's poses are known. In occupancy grid map, the space is discretized into independent cells and each cell associates a binary variable estimating if the cell is occupied. More specifically given the sensor readings and robot's poses in each time step<sup>[1]</sup>, the algorithm computes the log odds of the posterior for each grid

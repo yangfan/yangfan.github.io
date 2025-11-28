@@ -7,11 +7,6 @@ img: /assets/img/projects/path-planning/a-star/a5.gif
 importance: 1
 category: Mapping & Planning
 github: https://github.com/yangfan/probabilitics-robotics/tree/master/Path_planning
-images:
-  - path:
-    column:
-    text:
-not_empty: true
 ---
 
 Finding the shortest path between two nodes in a graph is a fundamental problem in mobile robotics. The graph can be computed from a occupancy grid map. In particular, each cell with low occupancy probability in the grid map is considered as a node while an edge connects two nodes if they are either vertically, horizontally or diagonally adjacent.

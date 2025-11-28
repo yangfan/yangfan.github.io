@@ -7,11 +7,6 @@ img: /assets/img/projects/computer-vision/YOLO/yolo_demo.gif
 importance: 2
 category: Computer Vision
 github: https://github.com/yangfan/object-detection
-images:
-  - path:
-    column:
-    text:
-not_empty: true
 ---
 
 The real-time object detection is a key component of the autonomous driving system. It is widely used for problems like collision-avoidance, navigation, mapping. In this project, an object detection system is created using YOLO model<sup>[1]</sup>.

@@ -7,11 +7,6 @@ img: /assets/img/projects/SLAM/Graph-based-slam/graph-slam-intel.gif
 importance: 4
 category: SLAM
 github: https://github.com/yangfan/probabilitics-robotics/tree/master/Graph_SLAM
-images:
-  - path:
-    column:
-    text:
-not_empty: true
 ---
 
 The GraphSLAM is a full SLAM algorithm. It defines a sparse graph in which each node corresponds to a pose of the robot or landmark and each edge corresponds to a spatial constraint between two nodes. The posterior of the full SLAM problem is therefore represented by this graph. There are two components in Graph-based SLAM: (1) Graph construction (front-end); (2) Graph optimization (back-end).

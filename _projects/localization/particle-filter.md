@@ -7,11 +7,6 @@ img: /assets/img/projects/localization/PF/particle_filter.gif
 importance: 1
 category: Localization
 github: https://github.com/yangfan/probabilitics-robotics/tree/master/Particle_filter
-images:
-  - path:
-    column:
-    text:
-not_empty: true
 ---
 
 Particle filter is a nonparametric filter which represents the posterior by a set of weighted samples. Since the functional form of the posterior is not needed, it can model arbitrary distribution, e.g., non-Gaussian distributions.

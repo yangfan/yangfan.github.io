@@ -7,11 +7,6 @@ img: /assets/img/projects/localization/EKF/kalman_filter.gif
 importance: 2
 category: Localization
 github: https://github.com/yangfan/probabilitics-robotics/tree/master/Kalman_filter
-images:
-  - path:
-    column:
-    text:
-not_empty: true
 ---
 
 The Kalman filter is a technique for filtering and prediction in linear Gaussian systems. It is assumed that

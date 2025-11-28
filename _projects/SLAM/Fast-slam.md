@@ -7,11 +7,6 @@ img: /assets/img/projects/SLAM/Fast-slam/fastslam.gif
 importance: 3
 category: SLAM
 github: https://github.com/yangfan/probabilitics-robotics/tree/master/FastSLAM
-images:
-  - path:
-    column:
-    text:
-not_empty: true
 ---
 
 The FastSLAM algorithm implemented in this project solves the full SLAM problem. It uses particle filters for estimating the robot path while each particle (which is a hypothesis of robot pose) uses separate EKFs to estimate each map feature location, based on the conditional independence between any two disjoint sets of features in the map, given the robot pose. The particle in FastSLAM is denoted as
