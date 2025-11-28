@@ -10,9 +10,7 @@ display_categories:
     single_col: false
   - title: Computer Vision
     single_col: false
-  - title: work
-    single_col: false
-  - title: fun
+  - title: SLAM
     single_col: false
 horizontal: false
 ---
