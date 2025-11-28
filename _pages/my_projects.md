@@ -8,9 +8,11 @@ nav_order: 1
 display_categories:
   - title: GINS
     single_col: false
-  - title: Computer Vision
-    single_col: false
   - title: SLAM
+    single_col: false
+  - title: Localization
+    single_col: false
+  - title: Computer Vision
     single_col: false
 horizontal: false
 ---
