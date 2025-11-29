@@ -9,3 +9,5 @@ github_repos:
   - yangfan/probabilitics-robotics
   - yangfan/ros_sim
   - yangfan/warehouseRobot
+  - yangfan/MultiRobotObsAvd
+  - yangfan/AvoidObstaclesWithTarget

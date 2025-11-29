@@ -20,6 +20,8 @@ display_categories:
     single_col: true
   - title: Computer Vision
     single_col: false
+  - title: Machine Learning
+    single_col: false
 horizontal: false
 ---
 
