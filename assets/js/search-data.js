@@ -458,11 +458,51 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
+            },},{id: "projects-a-route-planning-algorithm",
+          title: 'A* Route Planning Algorithm',
+          description: "C++ implementation of A* route planning algorithm. Given the inital and goal position on a map downloaded from the Open Street Map, the algorithm will compute an optimal path in term of distance. The map information of the region is contained in the OSM file which is a XML-formatted data in the form of &quot;nodes&quot; (points), &quot;ways&quot; (connections), and &quot;relations&quot; (street and object properties, such as tags).",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/Cpp/astar-planning/";
+            },},{id: "projects-memory-management-chatbot",
+          title: 'Memory Management Chatbot',
+          description: "The chatbot will talk with you about basic concepts in C++ memory management. You can ask related topic of memory management in C++, like unique pointer and get answer from chatbot. In this program, the smart pointers and move semantics are used to manage resources and optimize the code.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/Cpp/chatbot/";
+            },},{id: "projects-system-monitor",
+          title: 'System Monitor',
+          description: "The system monitor for linux operation system created using C++. It provides information such as cpu usage, memory usage, processes information. The program reads system information from various files in directories like /proc/ and /etc/, computes parameters and shows them in a graphic interface in terminal.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/Cpp/system-monitor/";
             },},{id: "projects-gnss-odometer-imu-integrated-navigation-system-based-on-error-state-kalman-filter",
           title: 'GNSS/Odometer/IMU integrated navigation system based on error state Kalman Filter',
           description: "This project implements a simplified GNSS/Odometer/IMU integrated navigation system with error state Kalman Filter. Three types of data: GNSS, Odometry and IMU are used for the sensor fusion. The error state Kalman Filter is used to estimate the state of the system which includes position, rotation, velocity, bias of accerometer, bias of gyroscope and gravity.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/GINS/eskf/";
+            },},{id: "projects-ros-simulation",
+          title: 'ROS Simulation',
+          description: "Simulate the SLAM and navigation in Gazebo using ROS navigation stack. In the SLAM simulation, user specify the pose for robot to visit in the unknown environment. During the exploration robot computes the occupancy grid map. Once the map is obtained, we can perform the Navigation simulation. Given the goal pose specified by user in rviz, the robot moves to the target and avoids the obstacle without teleoperation during the navigation. I also simulate the SLAM with multiple robots in Gazebo. Each robot moves around and computes its own map with seperate gmapping node. Then the maps are merged to a single map by multirobot-map-merge package. Further the project includes multi-robot navigation simulation. The robots have to avoid the collision with not only the static obstacle but not other moving robots.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/ROS/ros-simulation/";
+            },},{id: "projects-online-slam-with-extended-kalman-filter",
+          title: 'Online SLAM with Extended Kalman Filter',
+          description: "The first SLAM solution in history is based on the Extended Kalman Filter. This project implements an EKF SLAM system. Given the sensor readings and odometry information, the robot computes a feature-based map while simultaneously localizing itself.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/SLAM/EKF-slam/";
+            },},{id: "projects-full-slam-with-fastslam-algorithm",
+          title: 'Full SLAM with FastSLAM Algorithm',
+          description: "This project implements FastSLAM for full SLAM problem. Unlike the online SLAM algorithms such as EKF that computes the posterior in the current time step, FastSLAM estimates the full path posterior and the locations of features given the range-bearing sensor reading and odometry information.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/SLAM/Fast-slam/";
+            },},{id: "projects-graph-based-slam",
+          title: 'Graph-based SLAM',
+          description: "This project implements GraphSLAM algorithm which solves the full SLAM problem. Given a graph in which each node refers to a robot pose or landmark position and the edge represents a spatial constraint between two poses, the algorithm update the node configuration such that the error introduced by the constraints is minimized.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/SLAM/Graph-based-slam/";
+            },},{id: "projects-online-slam-with-unscented-kalman-filter",
+          title: 'Online SLAM with Unscented Kalman Filter',
+          description: "The idea of Unscented Kalman Filter is similar to EKF by linearizing the transformation of a Gaussian. UKF performs a stochastic linearization through the use of a weighted statistical linear regression process. This project impelements an UKF SLAM system.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/SLAM/UKF-slam/";
             },},{id: "projects-bag-of-visual-word-for-finding-similar-images",
           title: 'Bag of Visual Word for Finding Similar Images',
           description: "This project creates a C++ application that finds similar looking images using the idea of the bag of visual words. Given a database of images and a query image, the program will find N most similar database images to the query image. In robotics applications, finding similar image can provide additional information for determining the correspondence of the observation especially when the map features cannot be uniquely identified by range sensors like laser.",
@@ -473,6 +513,41 @@ ninja.data = [{
           description: "In this project, a real-time object detection application is created for the self-driving car using YOLO model. Given images taken from the car-mounted camera, the program outputs a list of bounding boxes indicating not only the position and size of objects but also the class of objects. In particular, a Deep CNN is used to convert the preprocessed image to an encoding, from which the bounding boxes with high probability is computed by non-max suppression.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/computer-vision/yolo/";
+            },},{id: "projects-extended-kalman-filter-for-localization",
+          title: 'Extended Kalman Filter for Localization',
+          description: "Extended Kalman Filter is an extension of the Kalman Filter which deals with the nonlinearities in the motion and observation model.This project implement a complete extended Kalman Filter using Python.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/localization/extended-kalman-filter/";
+            },},{id: "projects-particle-filter-for-localization",
+          title: 'Particle Filter for Localization',
+          description: "Particle filter is a nonparametric filter which does not rely on a fixed functional form of the posterior, such as Gaussian. This project implement a complete particle filter using Python.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/localization/particle-filter/";
+            },},{id: "projects-mobile-robot-collision-avoidance-using-reinforcement-learning",
+          title: 'Mobile Robot Collision Avoidance using Reinforcement Learning',
+          description: "Use DDPG to train mobile robots to avoid obstacle. Given the range sensor reading the robots learning the policy to produce the velocity command to avoid colliding into obstacles. The project is implemented with multiple robots under the environment.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/machine-learning/collision-avoidance/";
+            },},{id: "projects-mobile-robot-navigation-using-reinforcement-learning",
+          title: 'Mobile Robot Navigation using Reinforcement Learning',
+          description: "This is a follow-up project of collision-avoidance using DDPG. In this project, instead of moving randomly without collision, robot is expected to move to a given pose in the map without collision. In addition to the sensor readings, robot also receives its current pose to determine the linear and angular velocity.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/machine-learning/navigation/";
+            },},{id: "projects-occupancy-grid-map",
+          title: 'Occupancy Grid Map',
+          description: "Buiding Map is a fundamental problem in mobile robotics. Many applications like localization, path planning, navigation depend on the map of the environment. This project implements the occupancy grid mapping algorithm with the assumption that the robot poses are known.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/mapping/grid-map/";
+            },},{id: "projects-simulation-of-multiple-robots-in-warehouse",
+          title: 'Simulation of Multiple Robots in Warehouse',
+          description: "Control and simulate multiple robots working in the open warehouse environment where other uncontrolled agents are working around. The robots are expected to visit the assigned tasks and avoid not only the obstacles that are represented by the occupancy map (e.g. shelf, wall) but also  the uncontrolled static and moving agents that are not represented by the occupancy map.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/multi-robot-system/package-delivery/";
+            },},{id: "projects-path-planning-algorithms",
+          title: 'Path planning algorithms',
+          description: "This project implements path planning algorithms that compute the path in graphs from a start to a goal using Python. Given a occupancy grid map, the algorithms construct a graph in which each free cell is consider a node and any two free cells are considered connected if they are adjacent either horizontally, vertically or diagonally. Then Dijstra and A* algorithms are implemented to find the shortest path between the given two points.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/path-planning/path-planning/";
             },},{
         id: 'social-cv',
         title: 'CV',
