@@ -22,6 +22,8 @@ display_categories:
     single_col: false
   - title: Machine Learning
     single_col: false
+  - title: Cpp
+    single_col: false
 horizontal: false
 ---
 

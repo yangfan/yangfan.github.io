@@ -7,11 +7,6 @@ img: /assets/img/projects/machine-learning/collision-avoidance/train148.gif
 importance: 1
 category: Machine Learning
 github: https://github.com/yangfan/MultiRobotObsAvd
-images:
-  - path:
-    column:
-    text:
-not_empty: true
 ---
 
 In this project, I use Deep Deterministic Policy Gradient (DDPG) to train multiple mobile robots to avoid the obstacle. Given the range sensor readings (states) that detect obstacles in the map, robots learn a policy to control linear and angular velocity (actions) to avoid the colliding into obstacle.
