@@ -8,11 +8,21 @@ nav_order: 1
 display_categories:
   - title: GINS
     single_col: false
+  - title: SLAM
+    single_col: false
+  - title: Localization
+    single_col: false
+  - title: Mapping & Planning
+    single_col: false
+  - title: ROS
+    single_col: true
+  - title: Multi-robot System
+    single_col: true
   - title: Computer Vision
     single_col: false
-  - title: work
+  - title: Machine Learning
     single_col: false
-  - title: fun
+  - title: Cpp
     single_col: false
 horizontal: false
 ---

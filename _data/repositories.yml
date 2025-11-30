@@ -1,14 +1,16 @@
 github_users:
-  - torvalds
-  - alshedivat
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - yangfan/eskf_imu
+  - yangfan/Bag-of-visual-words
+  - yangfan/object-detection
+  - yangfan/probabilitics-robotics
+  - yangfan/ros_sim
+  - yangfan/warehouseRobot
+  - yangfan/MultiRobotObsAvd
+  - yangfan/AvoidObstaclesWithTarget
+  - yangfan/Astar-Route-Planning
+  - yangfan/Memory-Management-Chatbot
+  - yangfan/System-Monitor

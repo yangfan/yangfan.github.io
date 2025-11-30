@@ -8,10 +8,6 @@ img: /assets/img/projects/GINS/ESKF/cover_sensor_gnss_odom3d.png
 importance: 1
 category: GINS
 github: https://github.com/yangfan/eskf_imu
-images:
-  - path:
-    column:
-    text:
 ---
 
 In this project, we want to estimate the kinematics of a moving vehicle/robot equiped with IMU, GPS and odometer. By integrating accelerometer and gyroscope reading from IMU unit, we are able to estimate the motion. However IMU integration leads to dead-reckoning position system which drift with time. In order to reduce accumulated error, on one hand we need to have a better understanding of the IMU reading influenced by bias and random walk of accerlerometer and gyroscope which change over time. Therefore besides kinematics, we need to estimate the bias and covariance of the measurement noise. On ther other hand, we need to fuse imu information with other source of info, such as the absolution position from GNSS reading and velocity from odometry.

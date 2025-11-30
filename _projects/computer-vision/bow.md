@@ -7,14 +7,9 @@ img: /assets/img/projects/computer-vision/bow/bow.png
 importance: 1
 category: Computer Vision
 github: https://github.com/yangfan/Bag-of-visual-words
-images:
-  - path:
-    column:
-    text:
-not_empty: true
 ---
 
-A key problem for range-bearing sensors is known as the data association problem, which arises when landmarks cannot be uniquely identified. Therefore some residual uncertainty exists with regards to the identity of a landmark. A similar problem happens in the graph construction of the GraphSLAM (see more details in [here]({% link _pages/404.md %})). We need to match the observation to obtain the constraint. The problem arises when only the range-bearing sensor is used. For example, the robot may not distinguish the laser range data for the corridors because the corridors may look exactly the same from a laser sensor.
+A key problem for range-bearing sensors is known as the data association problem, which arises when landmarks cannot be uniquely identified. Therefore some residual uncertainty exists with regards to the identity of a landmark. A similar problem happens in the graph construction of the GraphSLAM (see more details in [here]({% link _projects/SLAM/Graph-based-slam.md %})). We need to match the observation to obtain the constraint. The problem arises when only the range-bearing sensor is used. For example, the robot may not distinguish the laser range data for the corridors because the corridors may look exactly the same from a laser sensor.
 
 To obtain the addition information of the map features, we can use camera to take the images of the environment and comparing those images to distinguish the map features. For example, we can write numbers on walls of different corridors. The robot can tell if the observed corridor is the same one observed before by comparing the images.
 
@@ -72,8 +67,7 @@ Note that computing SIFT descriptors is time consuming. In this project, the SIF
 
 ## Compiling instruction
 
-This project uses OpenCV 4 library for extracting SIFT features and k-mean clustering. The dataset is obtained from the [link]( https:
-//uni-bonn.sciebo.de/s/c2d0a1ebbe575fdba2a35a8033f1e2ab).
+This project uses OpenCV 4 library for extracting SIFT features and k-mean clustering. The dataset is provided at Page 69 in the [slides](https://www.ipb.uni-bonn.de/html/teaching/modern-cpp/slides/bow.pdf#page=69).
 
 To compile the code, type following commands at the root directory of the project.
 
