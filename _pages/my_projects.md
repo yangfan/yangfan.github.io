@@ -25,10 +25,33 @@ display_categories:
   - title: Cpp
     single_col: false
 horizontal: false
+contents: true
 ---
 
 <!-- pages/projects.md -->
 <div class="projects">
+  <p class="post-description">{{ page.description }}</p>
+  {% if page.contents %}
+    <d-contents>
+      <nav class="l-text figcaption">
+        <h3>Contents</h3>
+        {% for section in page.display_categories %}
+          <div>
+            <a href=".#{{ section.title }}">{{ section.title }}</a>
+          </div>
+          {% if section.subsections %}
+            <ul>
+              {% for subsection in section.subsections %}
+                <li>
+                  <a href="#{{ subsection.name | slugify }}">{{ subsection.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endfor %}
+      </nav>
+    </d-contents>
+  {% endif %}
 {% if site.enable_project_categories and page.display_categories %}
   <!-- Display categorized projects -->
   {% for category in page.display_categories %}
@@ -53,7 +76,7 @@ horizontal: false
         {% endfor %}
       </div>
     {% endif %}
-    {% endfor %}
+  {% endfor %}
 {% else %}
   <!-- Display projects without categories -->
   {% assign sorted_projects = site.projects | sort: "importance" %}
