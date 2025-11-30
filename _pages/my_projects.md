@@ -34,21 +34,23 @@ contents: true
   {% if page.contents %}
     <d-contents>
       <nav class="l-text figcaption">
-        <h3>Contents</h3>
+        <h3>Table of Contents</h3>
+        <ul>
         {% for section in page.display_categories %}
-          <div>
+          <li>
             <a href=".#{{ section.title }}">{{ section.title }}</a>
-          </div>
+          </li>
           {% if section.subsections %}
             <ul>
               {% for subsection in section.subsections %}
                 <li>
-                  <a href="#{{ subsection.name | slugify }}">{{ subsection.title }}</a>
+                  <a href="#{{ subsection.name }}">{{ subsection.name }}</a>
                 </li>
               {% endfor %}
             </ul>
           {% endif %}
         {% endfor %}
+        </ul>
       </nav>
     </d-contents>
   {% endif %}
