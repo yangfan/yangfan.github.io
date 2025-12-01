@@ -11,7 +11,7 @@ github: https://github.com/yangfan/Memory-Management-Chatbot
 
 This project creates a simple ChatBot using C++. The ChatBot (or MemBot) will introduce some basic concepts about the memory management in C++. The ChatBot will provide you the information based on the topic you type in, e.g., pointers.
 
-Text file [`answergraph.txt`](src/answergraph.txt) defines a knowledge graph, where each node represents an answer and edge represents user query. The most related answer is selected based on the Levenshtein distance. In this project, smart pointers are used to manage the memory allocation.
+Text file [`answergraph.txt`](https://github.com/yangfan/Memory-Management-Chatbot/blob/master/src/answergraph.txt) defines a knowledge graph, where each node represents an answer and edge represents user query. The most related answer is selected based on the Levenshtein distance. In this project, smart pointers are used to manage the memory allocation.
 
 <div class="row justify-content-center">
     <div class="col-10">
