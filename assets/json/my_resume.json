@@ -53,7 +53,13 @@
       "startDate": "2016-08-25",
       "endDate": "2019-05-31",
       "summary": "",
-      "highlights": ["MEC 325 Manufacturing Processes", "MEC 411 Control System Analysis and Design", "MEC 203 Engineering Graphics and CAD", "MEC 310 Introduction to Machine Design", "MEC 410 Design of Machine Elements"]
+      "highlights": [
+        "MEC 325 Manufacturing Processes",
+        "MEC 411 Control System Analysis and Design",
+        "MEC 203 Engineering Graphics and CAD",
+        "MEC 310 Introduction to Machine Design",
+        "MEC 410 Design of Machine Elements"
+      ]
     }
   ],
   "education": [
@@ -92,47 +98,25 @@
       "name": "Programming Languages",
       "level": "Master",
       "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "C++",
-        "Python",
-        "Matlab",
-        "Html"
-      ]
+      "keywords": ["C++", "Python", "Matlab", "Html"]
     },
     {
       "name": "Packages/Libraries",
       "level": "Master",
       "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Robot Operating System (ROS)",
-        "G2O",
-        "Ceres Solver",
-        "Eigen",
-        "OpenCV",
-        "Pytorch"
-      ]
+      "keywords": ["Robot Operating System (ROS)", "G2O", "Ceres Solver", "Eigen", "OpenCV", "Pytorch"]
     },
     {
       "name": "SLAM",
       "level": "Master",
       "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Visual SLAM",
-        "Lidar SLAM",
-        "Sensor Fusion",
-        "GNSS/IMU Integrated Navigation System (GINS)"
-      ]
+      "keywords": ["Visual SLAM", "Lidar SLAM", "Sensor Fusion", "GNSS/IMU Integrated Navigation System (GINS)"]
     },
     {
       "name": "State Estimation",
       "level": "Master",
       "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Kalman Filter",
-        "Pose Graph Optimization",
-        "Nonlinear Optimization",
-        "Lie Group"
-      ]
+      "keywords": ["Kalman Filter", "Pose Graph Optimization", "Nonlinear Optimization", "Lie Group"]
     }
   ],
   "projects": [
@@ -146,14 +130,14 @@
     {
       "name": "2D Lidar SLAM in Dynamic Warehouse Environment",
       "summary": "",
-      "highlights": ["Dynamic map update", "Moving object filtering", "Multi-stage mapping" , "Map extension"],
+      "highlights": ["Dynamic map update", "Moving object filtering", "Multi-stage mapping", "Map extension"],
       "startDate": "2022-06-01",
       "endDate": "2023-08-01"
     },
     {
       "name": "Texture-based Navigation System",
       "summary": "",
-      "highlights": ["Framework Design", "Backend Optimization", "Visualization Tools" , "Texture Data Processing"],
+      "highlights": ["Framework Design", "Backend Optimization", "Visualization Tools", "Texture Data Processing"],
       "startDate": "2023-08-01",
       "endDate": "2024-06-01"
     }
