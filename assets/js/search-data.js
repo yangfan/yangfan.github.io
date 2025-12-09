@@ -39,7 +39,7 @@ ninja.data = [{
           },
         },{id: "nav-cv",
           title: "cv",
-          description: "This is a description of the page. You can modify it in &#39;_pages/cv.md&#39;. You can also change or remove the top pdf download button.",
+          description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
@@ -155,6 +155,11 @@ ninja.data = [{
           description: "This project implements a simplified GNSS/Odometer/IMU integrated navigation system with error state Kalman Filter. Three types of data: GNSS, Odometry and IMU are used for the sensor fusion. The error state Kalman Filter is used to estimate the state of the system which includes position, rotation, velocity, bias of accerometer, bias of gyroscope and gravity.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/GINS/eskf/";
+            },},{id: "projects-gnss-odometer-imu-integrated-navigation-system-with-imu-preintegration",
+          title: 'GNSS/Odometer/IMU integrated navigation system with IMU preintegration',
+          description: "This project implements a simplified GNSS/Odometer/IMU integrated navigation system using pose graph optimization. Similar to ESKF, GNSS, Odometry and IMU are the input sensor data used for the sensor fusion. The residuals/factors in the pose optimization includes preintegrated imu factors, GNSS, odom, bias of imu measurement and prior factors.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/GINS/preint/";
             },},{id: "projects-ros-simulation",
           title: 'ROS Simulation',
           description: "Simulate the SLAM and navigation in Gazebo using ROS navigation stack. In the SLAM simulation, user specify the pose for robot to visit in the unknown environment. During the exploration robot computes the occupancy grid map. Once the map is obtained, we can perform the Navigation simulation. Given the goal pose specified by user in rviz, the robot moves to the target and avoids the obstacle without teleoperation during the navigation. I also simulate the SLAM with multiple robots in Gazebo. Each robot moves around and computes its own map with seperate gmapping node. Then the maps are merged to a single map by multirobot-map-merge package. Further the project includes multi-robot navigation simulation. The robots have to avoid the collision with not only the static obstacle but not other moving robots.",
