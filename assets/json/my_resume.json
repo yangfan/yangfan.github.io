@@ -1,0 +1,252 @@
+{
+  "basics": {
+    "name": "Fan Yang",
+    "position": "Robotics Navigation Eingeer",
+    "image": "",
+    "email": "fanyang.sbu@gmail.com",
+    "phone": "",
+    "website": "https://yangfan.github.io/",
+    "summary": "",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "San Diego",
+      "countryCode": "US",
+      "region": "California"
+    },
+    "profiles": [
+      {
+        "network": "Linkedin",
+        "username": "fanyang-sbu",
+        "url": "https://linkedin.com/in/fanyang-sbu/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Midea Emerging Technology Center",
+      "position": "Robotics Navigation Engineer",
+      "url": "",
+      "startDate": "2021-11-12",
+      "endDate": "",
+      "summary": ""
+    },
+    {
+      "name": "KUKA Robotics",
+      "position": "Senior Research Engineer",
+      "url": "https://www.kuka.com/en-us",
+      "startDate": "2021-11-11",
+      "endDate": "2024-06-01",
+      "summary": ""
+    },
+    {
+      "name": "Interacting Robotic Systems Laboratory at Stony Brook University",
+      "position": "Research Assistant",
+      "url": "https://sites.google.com/a/stonybrook.edu/robotics/home?authuser=0",
+      "startDate": "2017-06-01",
+      "endDate": "2020-08-01"
+    },
+    {
+      "name": "Stony Brook University",
+      "position": "Teaching Assistant",
+      "url": "https://www.kuka.com/en-us",
+      "startDate": "2016-08-25",
+      "endDate": "2019-05-31",
+      "summary": "",
+      "highlights": [
+        "MEC 325 Manufacturing Processes",
+        "MEC 411 Control System Analysis and Design",
+        "MEC 203 Engineering Graphics and CAD",
+        "MEC 310 Introduction to Machine Design",
+        "MEC 410 Design of Machine Elements"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Stony Brook University",
+      "location": "Stony Brook, NY, USA",
+      "url": "https://www.stonybrook.edu/",
+      "area": "Mechanical Engineering",
+      "studyType": "Doctor of Philosophy",
+      "startDate": "2015-08-01",
+      "endDate": "2020-12-01",
+      "GPA": "GPA: 3.88/4.0"
+    },
+    {
+      "institution": "Stony Brook University",
+      "location": "Stony Brook, NY, USA",
+      "url": "https://www.stonybrook.edu/",
+      "area": "Mechanical Engineering",
+      "studyType": "Master of Science",
+      "startDate": "2014-08-02",
+      "endDate": "2015-05-01",
+      "GPA": "GPA: 3.96/4.0"
+    },
+    {
+      "institution": "Stony Brook University",
+      "location": "Stony Brook, NY, USA",
+      "url": "https://www.stonybrook.edu/",
+      "area": "Applied Mathematics and Statistics",
+      "studyType": "Minor Area",
+      "startDate": "2014-08-01",
+      "endDate": "2017-05-01"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Programming Languages",
+      "level": "Master",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": ["C++", "Python", "Matlab", "Html"]
+    },
+    {
+      "name": "Packages/Libraries",
+      "level": "Master",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": ["Robot Operating System (ROS)", "G2O", "Ceres Solver", "Eigen", "OpenCV", "Pytorch"]
+    },
+    {
+      "name": "SLAM",
+      "level": "Master",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": ["Visual SLAM", "Lidar SLAM", "Sensor Fusion", "GNSS/IMU Integrated Navigation System (GINS)"]
+    },
+    {
+      "name": "State Estimation",
+      "level": "Master",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": ["Kalman Filter", "Pose Graph Optimization", "Nonlinear Optimization", "Lie Group"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Visual SLAM for Warehouse Mobile Robot",
+      "summary": "",
+      "highlights": ["Bundle Adjustment", "Pose Graph Optimization", "Offline Optimization", "GUI Tools"],
+      "startDate": "2021-11-12",
+      "endDate": "2022-06-01"
+    },
+    {
+      "name": "2D Lidar SLAM in Dynamic Warehouse Environment",
+      "summary": "",
+      "highlights": ["Dynamic map update", "Moving object filtering", "Multi-stage mapping", "Map extension"],
+      "startDate": "2022-06-01",
+      "endDate": "2023-08-01"
+    },
+    {
+      "name": "Texture-based Navigation System",
+      "summary": "",
+      "highlights": ["Framework Design", "Backend Optimization", "Visualization Tools", "Texture Data Processing"],
+      "startDate": "2023-08-01",
+      "endDate": "2024-06-01"
+    }
+  ],
+  "publications": [
+    {
+      "name": "Chance Constrained Simultaneous Path Planning and Task Assignment with Bottleneck Objective",
+      "publisher": "2021 IEEE International Conference on Robotics and Automation (ICRA)",
+      "releaseDate": "2021",
+      "url": "https://ieeexplore.ieee.org/document/9561276"
+    },
+    {
+      "name": "Chance Constrained Simultaneous Path Planning and Task Assignment for Multiple Robots with Stochastic Path Costs",
+      "publisher": "2020 IEEE International Conference on Robotics and Automation (ICRA)",
+      "releaseDate": "2020",
+      "url": "https://ieeexplore.ieee.org/abstract/document/9197354"
+    },
+    {
+      "name": "Algorithm for Multi-robot Chance-constrained Generalized Assignment Problem with Stochastic Resource Consumption",
+      "publisher": "2020 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+      "releaseDate": "2020",
+      "url": "https://ieeexplore.ieee.org/document/9341726"
+    },
+    {
+      "name": "PhD Thesis: Algorithms for Chance-constrained Multi-robot Task Allocation",
+      "publisher": "Stony Brook University",
+      "releaseDate": "2020"
+    },
+    {
+      "name": "Multirobot Simultaneous Path Planning and Task Assignment on Graphs with Stochastic Costs",
+      "publisher": "2019 International Symposium on Multi-Robot and Multi-Agent Systems (MRS)",
+      "releaseDate": "2019",
+      "url": "https://ieeexplore.ieee.org/document/8901052"
+    },
+    {
+      "name": "Algorithm for Optimal Chance Constrained Knapsack Problem with Applications to Multi-Robot Teaming",
+      "publisher": "2018 IEEE International Conference on Robotics and Automation (ICRA)",
+      "releaseDate": "2018",
+      "url": "https://ieeexplore.ieee.org/document/8461040"
+    },
+    {
+      "name": "Multi-robot Team Formation Under Uncertain Environment",
+      "publisher": "Northeast Robotics Colloquium",
+      "releaseDate": "2018"
+    },
+    {
+      "name": "Algorithm for Optimal Chance Constrained Linear Assignment",
+      "publisher": "2017 IEEE International Conference on Robotics and Automation (ICRA)",
+      "releaseDate": "2017",
+      "url": "https://ieeexplore.ieee.org/document/7989099"
+    },
+    {
+      "name": "Algorithm for Optimal Chance Constrained Knapsack with Applications to Multi-robot Teaming",
+      "publisher": "27th Annual Fall Workshop on Computational Geometry",
+      "releaseDate": "2017"
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "ICRA 2020 workshop on Foundational Problems in Multi-robot Coordination under Uncertainty and Adversarial Attacks",
+      "position": "Coordinator",
+      "url": "",
+      "startDate": "2020-05-31",
+      "endDate": "2020-06-05",
+      "summary": ""
+    },
+    {
+      "organization": "IEEE International Conference on Robotics and Automation (ICRA)",
+      "position": "Reviewer",
+      "url": "",
+      "startDate": "2018-01-01",
+      "endDate": "2021-12-31",
+      "summary": ""
+    },
+    {
+      "organization": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+      "position": "Reviewer",
+      "url": "",
+      "startDate": "2018-01-01",
+      "endDate": "2018-12-31",
+      "summary": ""
+    },
+    {
+      "organization": "IEEE Robotics and Automation Letters (RA-L)",
+      "position": "Reviewer",
+      "url": "",
+      "startDate": "2020-01-01",
+      "endDate": "2020-12-31",
+      "summary": ""
+    },
+    {
+      "organization": "IEEE International Conference on Automation Science and Engineering (CASE)",
+      "position": "Reviewer",
+      "url": "",
+      "startDate": "2020-01-01",
+      "endDate": "2020-12-31",
+      "summary": ""
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "",
+      "icon": ""
+    },
+    {
+      "language": "Chinese",
+      "fluency": "",
+      "icon": ""
+    }
+  ]
+}
