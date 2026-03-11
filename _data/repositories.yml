@@ -4,6 +4,7 @@ repo_description_lines_max: 2
 
 github_repos:
   - yangfan/lio3d
+  - yangfan/lio_preint
   - yangfan/mapping2d
   - yangfan/eskf_imu
   - yangfan/preint_imu

@@ -1,9 +1,9 @@
 ---
 layout: page
-title: 3D Lidar Inertial Odometry
+title: ESKF Lidar Inertial Odometry
 description: |
   This project implements 3D lidar inertial odometry based on error state kalman filter. Given 3D lidar scan and IMU sensor data, the goal is to create 3D point cloud map of the environment. The key elements include ESKF for state estimation, point cloud registration estimating transformation between two point clouds, and lio that creating and updating 3D point cloud map. Two types of LIO is implemented, namely loosely coupled LIO which only takes point cloud alignment as the observation in ESKF and tightly coupled LIO which takes residuals of point cloud alignment as the observation function of ESKF.
-img: /assets/img/projects/lidar-inertial-odometry/eskf.gif
+img: /assets/img/projects/lidar-inertial-odometry/lio3d/ndt_inc_lo.gif
 importance: 1
 category: 3D Lidar Inertial Odometry
 github: https://github.com/yangfan/lio3d
@@ -45,7 +45,7 @@ Probelm statement: given target and source point cloud, compute pose where sourc
     <div class="row justify-content-center">
         <div class="col">
             <div class="w-50 mx-auto" style="background-color: white;">
-                <img class="img-fluid" src="{{ '/assets/img/projects/lidar-inertial-odometry/ndt_alignment.png' | relative_url }}" alt=""/>
+                <img class="img-fluid" src="{{ '/assets/img/projects/lidar-inertial-odometry/lio3d/ndt_alignment.png' | relative_url }}" alt=""/>
             </div>
         </div>
     </div>
@@ -117,7 +117,7 @@ Goal: given pointcloud, estimate global pose at each timestamp.
     <div class="row justify-content-center">
         <div class="col">
             <div class="w-50 mx-auto" style="background-color: white;">
-                <img class="img-fluid" src="{{ '/assets/img/projects/lidar-inertial-odometry/ndt_lo.gif' | relative_url }}" alt=""/>
+                <img class="img-fluid" src="{{ '/assets/img/projects/lidar-inertial-odometry/lio3d/ndt_lo.gif' | relative_url }}" alt=""/>
             </div>
         </div>
     </div>
@@ -134,7 +134,7 @@ Goal: given pointcloud, estimate global pose at each timestamp.
     <div class="row justify-content-center">
         <div class="col">
             <div class="w-50 mx-auto" style="background-color: white;">
-                <img class="img-fluid" src="{{ '/assets/img/projects/lidar-inertial-odometry/ndt_inc_lo.gif' | relative_url }}" alt=""/>
+                <img class="img-fluid" src="{{ '/assets/img/projects/lidar-inertial-odometry/lio3d/ndt_inc_lo.gif' | relative_url }}" alt=""/>
             </div>
         </div>
     </div>
@@ -145,7 +145,7 @@ Goal: given pointcloud, estimate global pose at each timestamp.
     <div class="row justify-content-center">
         <div class="col">
             <div class="w-50 mx-auto" style="background-color: white;">
-                <img class="img-fluid" src="{{ '/assets/img/projects/lidar-inertial-odometry/ndt_lo.png' | relative_url }}" alt=""/>
+                <img class="img-fluid" src="{{ '/assets/img/projects/lidar-inertial-odometry/lio3d/ndt_lo.png' | relative_url }}" alt=""/>
             </div>
         </div>
     </div>
@@ -173,7 +173,7 @@ Goal: Estimate the state of robot at each timestamp by loosely fusing lidar scan
     <div class="row justify-content-center">
         <div class="col">
             <div class="w-50 mx-auto" style="background-color: white;">
-                <img class="img-fluid" src="{{ '/assets/img/projects/lidar-inertial-odometry/eskf.gif' | relative_url }}" alt=""/>
+                <img class="img-fluid" src="{{ '/assets/img/projects/lidar-inertial-odometry/lio3d/eskf.gif' | relative_url }}" alt=""/>
             </div>
         </div>
     </div>
@@ -184,7 +184,7 @@ Goal: Estimate the state of robot at each timestamp by loosely fusing lidar scan
     <div class="row justify-content-center">
         <div class="col">
             <div class="w-50 mx-auto" style="background-color: white;">
-                <img class="img-fluid" src="{{ '/assets/img/projects/lidar-inertial-odometry/NCLT.png' | relative_url }}" alt=""/>
+                <img class="img-fluid" src="{{ '/assets/img/projects/lidar-inertial-odometry/lio3d/NCLT.png' | relative_url }}" alt=""/>
             </div>
         </div>
     </div>
@@ -215,7 +215,7 @@ Goal: Estimate the state of robot at each timestamp by tightly fusing lidar scan
     <div class="row justify-content-center">
         <div class="col">
             <div class="w-50 mx-auto" style="background-color: white;">
-                <img class="img-fluid" src="{{ '/assets/img/projects/lidar-inertial-odometry/ieskf.gif' | relative_url }}" alt=""/>
+                <img class="img-fluid" src="{{ '/assets/img/projects/lidar-inertial-odometry/lio3d/ieskf.gif' | relative_url }}" alt=""/>
             </div>
         </div>
     </div>
