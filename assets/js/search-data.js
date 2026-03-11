@@ -220,6 +220,11 @@ ninja.data = [{
           description: "Buiding Map is a fundamental problem in mobile robotics. Many applications like localization, path planning, navigation depend on the map of the environment. This project implements the occupancy grid mapping algorithm with the assumption that the robot poses are known.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/mapping/grid-map/";
+            },},{id: "projects-2d-slam-system-for-amr",
+          title: '2D SLAM System for AMR',
+          description: "This project implements a 2D SLAM system for AMR (autonomous mobile robots). The system includes lidar odometry, map management and loop closure. Given 2D lidar scan, robot estimate the pose by scan matching with a map or scan. The lidar scan is then integrated to the map. To reduce the impact of the accumulated error, instead of one single map, a sequence of submaps is created. Each submap is an occupancy grid map. The real-time loop closure module is implemented to improve the global consistency.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/mapping2d/mapping2d/";
             },},{id: "projects-simulation-of-multiple-robots-in-warehouse",
           title: 'Simulation of Multiple Robots in Warehouse',
           description: "Control and simulate multiple robots working in the open warehouse environment where other uncontrolled agents are working around. The robots are expected to visit the assigned tasks and avoid not only the obstacles that are represented by the occupancy map (e.g. shelf, wall) but also  the uncontrolled static and moving agents that are not represented by the occupancy map.",
