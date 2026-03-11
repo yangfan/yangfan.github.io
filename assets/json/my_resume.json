@@ -104,7 +104,7 @@
       "name": "Packages/Libraries",
       "level": "Master",
       "icon": "fa-solid fa-hashtag",
-      "keywords": ["Robot Operating System (ROS)", "G2O", "Ceres Solver", "Eigen", "OpenCV", "Pytorch"]
+      "keywords": ["Robot Operating System (ROS)", "G2O", "Ceres Solver", "Eigen", "PCL", "OpenCV", "Pytorch"]
     },
     {
       "name": "SLAM",
@@ -116,7 +116,7 @@
       "name": "State Estimation",
       "level": "Master",
       "icon": "fa-solid fa-hashtag",
-      "keywords": ["Kalman Filter", "Pose Graph Optimization", "Nonlinear Optimization", "Lie Group"]
+      "keywords": ["Kalman Filter", "Pose Graph Optimization", "Nonlinear Optimization", "Lie Group", "MAP/MLE"]
     }
   ],
   "projects": [
