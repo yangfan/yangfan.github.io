@@ -3,6 +3,7 @@ github_users:
 repo_description_lines_max: 2
 
 github_repos:
+  - yangfan/mapping2d
   - yangfan/eskf_imu
   - yangfan/preint_imu
   - yangfan/Bag-of-visual-words

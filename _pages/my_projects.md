@@ -6,6 +6,8 @@ description: A growing collection of my personal projects.
 nav: true
 nav_order: 1
 display_categories:
+  - title: mapping2d
+    single_col: true
   - title: GINS
     single_col: false
   - title: SLAM
