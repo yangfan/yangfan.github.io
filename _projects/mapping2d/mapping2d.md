@@ -6,7 +6,7 @@ description: |
 
 img: /assets/img/projects/mapping2d/submap.gif
 importance: 1
-category: mapping2d
+category: 2D Mapping
 github: https://github.com/yangfan/mapping2d
 ---
 
@@ -187,7 +187,7 @@ The submap contains an occupancy grid map, likelihood field and an array of inse
       </div>
   </div>
   <div class="caption">
-    Point-to-Line ICP
+    distance map (left) and submap (right)
   </div>
 
 ### Loop closure
