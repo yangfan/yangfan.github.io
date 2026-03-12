@@ -37,7 +37,7 @@ Goal: Compute IMU preintegration measurements, i.e., rotation, velocity, positio
 
 #### Code
 
-- [source code](src/imu/imu.cpp)
+- [source code](https://github.com/yangfan/lio_preint/tree/master/src/imu/imu.cpp)
 
 ### Incremental NDT matcher
 
@@ -52,7 +52,7 @@ Goal: estimate the current global pose by NDT alignment of source and target poi
 
 #### Code
 
-- [source code](src/matching/NDT_INC.cpp)
+- [source code](https://github.com/yangfan/lio_preint/tree/master/src/matching/NDT_INC.cpp)
 
 ### Pose Graph Optimization
 
@@ -87,8 +87,8 @@ Goal: Build pose graph optimizaton with g2o. Estimate current states such that t
 
 #### Code
 
-- [Definition of vertices and edges](src/g2o_types/types.cpp)
-- [Building pose graph and marginalization](src/lio/LioPreint.cpp)
+- [Definition of vertices and edges](https://github.com/yangfan/lio_preint/tree/master/src/g2o_types/types.cpp)
+- [Building pose graph and marginalization](https://github.com/yangfan/lio_preint/tree/master/src/lio/LioPreint.cpp)
 
 ### Lidar-inertial odometry
 
@@ -112,8 +112,8 @@ Goal: Estimate the states at each time step given synchronized lidar and imu dat
 
 #### Code
 
-- [source code](src/lio/LioPreint.cpp)
-- [unit test](test/preint_test.cpp): `./test/preint_test`
+- [source code](https://github.com/yangfan/lio_preint/tree/master/src/lio/LioPreint.cpp)
+- [unit test](https://github.com/yangfan/lio_preint/tree/master/test/preint_test.cpp): `./test/preint_test`
 
     <div class="row justify-content-center">
         <div class="col">
@@ -149,7 +149,7 @@ Goal: Match point cloud data with imu readings such that the lidar points from a
 
 #### Code
 
-- [source code](src/tools/Sync.cpp)
+- [source code](https://github.com/yangfan/lio_preint/tree/master/src/tools/Sync.cpp)
 
 ### Repository
 

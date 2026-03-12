@@ -37,9 +37,9 @@ Goal: given 2D lidar scan, estimate pose at each time step and create submaps se
 
 #### Code
 
-- [source code](src/Mapper2d.cpp)
-- [unit test](test/mapper_test.cpp): `./test/mapper_test --optimizer_type=Ceres`
-- [main](src/main.cpp): `./src/main`
+- [source code](https://github.com/yangfan/mapping2d/tree/master/src/Mapper2d.cpp)
+- [unit test](https://github.com/yangfan/mapping2d/tree/master/test/mapper_test.cpp): `./test/mapper_test --optimizer_type=Ceres`
+- [main](https://github.com/yangfan/mapping2d/tree/master/src/main.cpp): `./src/main`
 
   <div class="row justify-content-center">
       <div class="col">
@@ -87,8 +87,8 @@ procedures:
 
 - code
 
-  - [source code](src/icp2d.cpp)
-  - [unit test](test/icp2d_test.cpp): `./test/icp2d_test --visual_optimizer=Ceres`
+  - [source code](https://github.com/yangfan/mapping2d/tree/master/src/icp2d.cpp)
+  - [unit test](https://github.com/yangfan/mapping2d/tree/master/test/icp2d_test.cpp): `./test/icp2d_test --visual_optimizer=Ceres`
 
   <div class="row justify-content-center">
       <div class="col">
@@ -115,8 +115,8 @@ procedures:
 
 - code
 
-  - [source code](src/icp2d.cpp)
-  - [unit test](test/icp2dp2l_test.cpp): `./test/icp2dp2l_test --optimizer_type=CeresMT`
+  - [source code](https://github.com/yangfan/mapping2d/tree/master/src/icp2d.cpp)
+  - [unit test](https://github.com/yangfan/mapping2d/tree/master/test/icp2dp2l_test.cpp): `./test/icp2dp2l_test --optimizer_type=CeresMT`
 
   <div class="row justify-content-center">
       <div class="col">
@@ -147,8 +147,8 @@ procedures:
 
 - code
 
-  - [source code](src/LikelihoodField.cpp)
-  - [unit test](test/likelihood_test.cpp): `./test/likelihood_test --optimizer_type=Ceres`
+  - [source code](https://github.com/yangfan/mapping2d/tree/master/src/LikelihoodField.cpp)
+  - [unit test](https://github.com/yangfan/mapping2d/tree/master/test/likelihood_test.cpp): `./test/likelihood_test --optimizer_type=Ceres`
 
   <div class="row justify-content-center">
       <div class="col">
@@ -175,9 +175,9 @@ The submap contains an occupancy grid map, likelihood field and an array of inse
 
 #### Code
 
-- [submap source code](src/Submap.cpp)
-- [occupancy grid map source code](src/OGM.cpp)
-- [unit test](test/submap_test.cpp): `./test/submap_test --optimizer_type=Ceres`
+- [submap source code](https://github.com/yangfan/mapping2d/tree/master/src/Submap.cpp)
+- [occupancy grid map source code](https://github.com/yangfan/mapping2d/tree/master/src/OGM.cpp)
+- [unit test](https://github.com/yangfan/mapping2d/tree/master/test/submap_test.cpp): `./test/submap_test --optimizer_type=Ceres`
 
   <div class="row justify-content-center">
       <div class="col">
@@ -206,8 +206,8 @@ Goal: eliminate the accumulated error and improve the global consistency during 
 
 #### Code
 
-- [loop closure source code](src/LoopClosure.cpp)
-- [multi-level alignment source code](src/LikelihoodFieldMR.cpp)
+- [loop closure source code](https://github.com/yangfan/mapping2d/tree/master/src/LoopClosure.cpp)
+- [multi-level alignment source code](https://github.com/yangfan/mapping2d/tree/master/src/LikelihoodFieldMR.cpp)
 
   <div class="row justify-content-center">
       <div class="col">
@@ -251,8 +251,8 @@ Goal: given a query point, find the closest k neighbors from the target point cl
 
 #### Code
 
-- [source code](include/mapping2d/KDTree.hpp)
-- [unit test](test/kd_test.cpp): `./build/test/kd_test`
+- [source code](https://github.com/yangfan/mapping2d/tree/master/include/mapping2d/KDTree.hpp)
+- [unit test](https://github.com/yangfan/mapping2d/tree/master/test/kd_test.cpp): `./build/test/kd_test`
 
 ### Repository
 
