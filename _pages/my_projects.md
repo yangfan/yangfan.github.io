@@ -10,6 +10,8 @@ display_categories:
     single_col: false
   - title: 3D Mapping
     single_col: true
+  - title: Real-time Localization
+    single_col: true
   - title: 2D Mapping
     single_col: true
   - title: GINS
