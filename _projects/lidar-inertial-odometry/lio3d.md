@@ -39,8 +39,8 @@ Probelm statement: given target and source point cloud, compute pose where sourc
 
 - code
 
-  - [source code](src/matching/NDT.cpp)
-  - [unit test](test/ndt_test.cpp): `./test/ndt_test`
+  - [source code](https://github.com/yangfan/lio3d/tree/master/src/matching/NDT.cpp)
+  - [unit test](https://github.com/yangfan/lio3d/tree/master/test/ndt_test.cpp): `./test/ndt_test`
 
     <div class="row justify-content-center">
         <div class="col">
@@ -64,7 +64,7 @@ Goal: Build target grid incrementally, limit number of voxel cells, accelerate a
 3. To have better numerical stability, the inverse of covariance matrix, i.e., information matrix is computed by SVD.
 
 - code
-  - [source code](src/matching/NDT_INC.cpp)
+  - [source code](https://github.com/yangfan/lio3d/tree/master/src/matching/NDT_INC.cpp)
 
 #### ICP 3D
 
@@ -91,8 +91,8 @@ Goal: Build target grid incrementally, limit number of voxel cells, accelerate a
   - Jacobian: $[-n^T R \hat{p}_i, \ n^T] \in 1\times 6$
   - go back to the first step until converge
 
-- [source code](src/matching/ICP3D.cpp)
-- [unit test](test/icp_test.cpp): `./test/icp_test`
+- [source code](https://github.com/yangfan/lio3d/tree/master/src/matching/ICP3D.cpp)
+- [unit test](https://github.com/yangfan/lio3d/tree/master/test/icp_test.cpp): `./test/icp_test`
 
 ### Lidar Odometry
 
@@ -110,9 +110,9 @@ Goal: given pointcloud, estimate global pose at each timestamp.
 
 - NDT LO
 
-  - [source code](src/lio/ndt_lo.cpp)
+  - [source code](https://github.com/yangfan/lio3d/tree/master/src/lio/ndt_lo.cpp)
 
-  - [unit test](test/ndt_lo_test.cpp): `./test/ndt_lo_test`
+  - [unit test](https://github.com/yangfan/lio3d/tree/master/test/ndt_lo_test.cpp): `./test/ndt_lo_test`
 
     <div class="row justify-content-center">
         <div class="col">
@@ -127,9 +127,9 @@ Goal: given pointcloud, estimate global pose at each timestamp.
 
 - Incremental NDT LO
 
-  - [source code](src/lio/ndt_inc_lo.cpp)
+  - [source code](https://github.com/yangfan/lio3d/tree/master/src/lio/ndt_inc_lo.cpp)
 
-  - [unit test](test/ndt_inc_lo_test.cpp): `./test/ndt_inc_lo_test`
+  - [unit test](https://github.com/yangfan/lio3d/tree/master/test/ndt_inc_lo_test.cpp): `./test/ndt_inc_lo_test`
 
     <div class="row justify-content-center">
         <div class="col">
@@ -167,8 +167,8 @@ Goal: Estimate the state of robot at each timestamp by loosely fusing lidar scan
 
 #### Code
 
-- [source code](src/eskf/LioEskf.cpp)
-- [unit test](test/eskf_test.cpp): `./test/eskf_test`
+- [source code](https://github.com/yangfan/lio3d/tree/master/src/eskf/LioEskf.cpp)
+- [unit test](https://github.com/yangfan/lio3d/tree/master/test/eskf_test.cpp): `./test/eskf_test`
 
     <div class="row justify-content-center">
         <div class="col">
@@ -209,8 +209,8 @@ Goal: Estimate the state of robot at each timestamp by tightly fusing lidar scan
 
 #### Code
 
-- [source code](src/eskf/LioIeskf.cpp)
-- [unit test](test/ieskf_test.cpp): `./test/ieskf_test`
+- [source code](https://github.com/yangfan/lio3d/tree/master/src/eskf/LioIeskf.cpp)
+- [unit test](https://github.com/yangfan/lio3d/tree/master/test/ieskf_test.cpp): `./test/ieskf_test`
 
     <div class="row justify-content-center">
         <div class="col">

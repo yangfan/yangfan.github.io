@@ -61,13 +61,13 @@ Goal: Use IESKF Lidar IMU Odometry to create Keyframes with timestamp lio pose, 
 
 #### Code
 
-- [source code](src/mapping/FrontEnd.cpp)
+- [source code](https://github.com/yangfan/offline_mapping/tree/master/src/mapping/FrontEnd.cpp)
 
-- [executable](src/app/main_frontend.cpp)
+- [executable](https://github.com/yangfan/offline_mapping/tree/master/src/app/main_frontend.cpp)
 
   - run frontend: `./bin/main_frontend`
 
-- [create global map](src/app/merge_kfs.cpp)
+- [create global map](https://github.com/yangfan/offline_mapping/tree/master/src/app/merge_kfs.cpp)
 
   1.  merge keyframes: `./bin/merge_kfs --pose_type=lio`
   2.  show map: `pcl_viewer ./data/output/keyframes/pcd/map.pcd`
@@ -103,9 +103,9 @@ Goal: find keyframes that are spatially close but created at different times
 
 #### Code
 
-- [source code](src/mapping/LoopClosure.cpp)
+- [source code](https://github.com/yangfan/offline_mapping/tree/master/src/mapping/LoopClosure.cpp)
 
-- [executable](src/app/main_loopclosure.cpp)
+- [executable](https://github.com/yangfan/offline_mapping/tree/master/src/app/main_loopclosure.cpp)
 
   - run loop closure detection: `./bin/main_loop`
 
@@ -140,9 +140,9 @@ Goal: Refine keyframe pose by pose graph optimization
 
 #### Code
 
-- [source code](src/mapping/Optimization.cpp)
+- [source code](https://github.com/yangfan/offline_mapping/tree/master/src/mapping/Optimization.cpp)
 
-- [executable](src/app/main_optimization.cpp)
+- [executable](https://github.com/yangfan/offline_mapping/tree/master/src/app/main_optimization.cpp)
 
 - optimization 1: `./bin/main_opt --opt_stage=1`
 
@@ -198,7 +198,7 @@ Goal: Split map into a grid of submaps
 
 #### Code
 
-- [source code](src/app/partition_map.cpp)
+- [source code](https://github.com/yangfan/offline_mapping/tree/master/src/app/partition_map.cpp)
 
 - command: `./bin/partition --info_file=kf_info.txt`
 
