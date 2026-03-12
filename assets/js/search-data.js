@@ -195,6 +195,16 @@ ninja.data = [{
           description: "In this project, a real-time object detection application is created for the self-driving car using YOLO model. Given images taken from the car-mounted camera, the program outputs a list of bounding boxes indicating not only the position and size of objects but also the class of objects. In particular, a Deep CNN is used to convert the preprocessed image to an encoding, from which the bounding boxes with high probability is computed by non-max suppression.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/computer-vision/yolo/";
+            },},{id: "projects-eskf-lidar-inertial-odometry",
+          title: 'ESKF Lidar Inertial Odometry',
+          description: "This project implements 3D lidar inertial odometry based on error state kalman filter. Given 3D lidar scan and IMU sensor data, the goal is to create 3D point cloud map of the environment. The key elements include ESKF for state estimation, point cloud registration estimating transformation between two point clouds, and lio that creating and updating 3D point cloud map. Two types of LIO is implemented, namely loosely coupled LIO which only takes point cloud alignment as the observation in ESKF and tightly coupled LIO which takes residuals of point cloud alignment as the observation function of ESKF.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/lidar-inertial-odometry/lio3d/";
+            },},{id: "projects-imu-preintegration-based-lidar-inertial-odometry",
+          title: 'IMU Preintegration based Lidar Inertial Odometry',
+          description: "This project implements a tightly coupled 3D lidar inertial odometry based on IMU preintegration. Given 3D lidar scan and IMU sensor data, the goal is to create 3D point cloud map of the environment. The state estimation is achieved by pose graph optimization with both imu preintegration measurement and point cloud alignment involved as residuals. The optimization problem is built for estimating the state of two consecutive frames, though it can be further adapted to integrate more frames and observations. Moreover the marginalization is implemented and executed for smoothing the state estimation.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/lidar-inertial-odometry/lio_preint/";
             },},{id: "projects-extended-kalman-filter-for-localization",
           title: 'Extended Kalman Filter for Localization',
           description: "Extended Kalman Filter is an extension of the Kalman Filter which deals with the nonlinearities in the motion and observation model.This project implement a complete extended Kalman Filter using Python.",
@@ -205,6 +215,11 @@ ninja.data = [{
           description: "Particle filter is a nonparametric filter which does not rely on a fixed functional form of the posterior, such as Gaussian. This project implement a complete particle filter using Python.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/localization/particle-filter/";
+            },},{id: "projects-real-time-localization",
+          title: 'Real-time Localization',
+          description: "This project implements a real-time lidar localization system based on error state kalman filter. Given the 3D point cloud map, the pose of vehicle is estimated by matching laser scan to the map. Then the states are fused with imu data using ESKF. The initial pose is determined by synchronization of lidar scan with GNSS data which provides physical coordinates, and a grid search for estimating orientation. A map management component is implemented to accelerate scan matching and save memory usage. Running in a seperate thread, the map managment loads active submap and releases inactive submap based on the state of vehicle.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/localization_fusion/localization_fusion/";
             },},{id: "projects-mobile-robot-collision-avoidance-using-reinforcement-learning",
           title: 'Mobile Robot Collision Avoidance using Reinforcement Learning',
           description: "Use DDPG to train mobile robots to avoid obstacle. Given the range sensor reading the robots learning the policy to produce the velocity command to avoid colliding into obstacles. The project is implemented with multiple robots under the environment.",
@@ -225,6 +240,11 @@ ninja.data = [{
           description: "This project implements a 2D SLAM system for AMR (autonomous mobile robots). The system includes lidar odometry, map management and loop closure. Given 2D lidar scan, robot estimate the pose by scan matching with a map or scan. The lidar scan is then integrated to the map. To reduce the impact of the accumulated error, instead of one single map, a sequence of submaps is created. Each submap is an occupancy grid map. The real-time loop closure module is implemented to improve the global consistency.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/mapping2d/mapping2d/";
+            },},{id: "projects-3d-point-cloud-mapping",
+          title: '3D Point Cloud Mapping',
+          description: "This project designs and implements a complete pipline of the 3D point cloud mapping system. The system is comprised of two parts: online frontend module and offline backend module. The frontend is responsible for collecting sensor data (3d lidar scan, imu data, gnss data), creating keyframes and saving point cloud data. The backend is then executed to reduce accumulated error and improve the consistency of the map. The main job of the backend is to detect and evaluate the loop closure, eliminate sensor data outliers and optimize the keyframe poses and partition the map.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/mapping3d/mapping3d/";
             },},{id: "projects-simulation-of-multiple-robots-in-warehouse",
           title: 'Simulation of Multiple Robots in Warehouse',
           description: "Control and simulate multiple robots working in the open warehouse environment where other uncontrolled agents are working around. The robots are expected to visit the assigned tasks and avoid not only the obstacles that are represented by the occupancy map (e.g. shelf, wall) but also  the uncontrolled static and moving agents that are not represented by the occupancy map.",
