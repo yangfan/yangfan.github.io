@@ -8,6 +8,8 @@ nav_order: 1
 display_categories:
   - title: 3D Lidar Inertial Odometry
     single_col: false
+  - title: 3D Mapping
+    single_col: true
   - title: 2D Mapping
     single_col: true
   - title: GINS
