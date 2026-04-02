@@ -4,7 +4,7 @@ permalink: /cv/
 title: cv
 nav: true
 nav_order: 5
-cv_pdf: /assets/pdf/cv_fanyang.pdf # you can also use external links here
+cv_pdf: fanyang_cv2026.pdf # you can also use external links here
 description:
 toc:
   sidebar: left
