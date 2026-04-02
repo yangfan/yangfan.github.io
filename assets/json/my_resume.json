@@ -24,11 +24,11 @@
   },
   "work": [
     {
-      "name": "Midea Emerging Technology Center",
+      "name": "Midea Corporate Research Center",
       "position": "Robotics Navigation Engineer",
-      "url": "",
+      "url": "https://www.midea.com.cn/en/about-midea/Innovation/research-centers/CRC",
       "startDate": "2021-11-12",
-      "endDate": "",
+      "endDate": "2025-08-01",
       "summary": ""
     },
     {
@@ -36,7 +36,7 @@
       "position": "Senior Research Engineer",
       "url": "https://www.kuka.com/en-us",
       "startDate": "2021-11-11",
-      "endDate": "2024-06-01",
+      "endDate": "2025-08-01",
       "summary": ""
     },
     {
@@ -121,28 +121,41 @@
   ],
   "projects": [
     {
-      "name": "Visual SLAM for Warehouse Mobile Robot",
-      "summary": "",
-      "highlights": ["Bundle Adjustment", "Pose Graph Optimization", "Offline Optimization", "GUI Tools"],
+      "name": "Visual-inertial SLAM system for KUKA Autonomous Mobile Robots",
+      "summary": "Responsible for the offline optimization module that detects loop closing, optimizes map points and keyframes pose by bundle adjustment, merges maps, and removes outliers and redundant features. ",
+      "highlights": ["Bundle Adjustment", "Pose Graph Optimization", "Loop Closure", "GUI Tools"],
       "startDate": "2021-11-12",
       "endDate": "2022-06-01"
     },
     {
-      "name": "2D Lidar SLAM in Dynamic Warehouse Environment",
-      "summary": "",
-      "highlights": ["Dynamic map update", "Moving object filtering", "Multi-stage mapping", "Map extension"],
+      "name": "Map updating system for dynamic environment",
+      "summary": "Develop map updating system dealing with localization failures in the dynamic warehouse environment.",
+      "highlights": ["Dynamic map update", "Moving object filtering", "Map Merge Schemes", "Factor-graph-based Online Mapping"],
       "startDate": "2022-06-01",
       "endDate": "2023-08-01"
     },
     {
-      "name": "Texture-based Navigation System",
-      "summary": "",
-      "highlights": ["Framework Design", "Backend Optimization", "Visualization Tools", "Texture Data Processing"],
+      "name": "Map extending system for warehouse with large area",
+      "summary": "Propose and develop the map extending pipeline for the large warehouse space (100,000 m^2).",
+      "highlights": ["Loop Closure", "Pose Graph Data Format"],
       "startDate": "2023-08-01",
-      "endDate": "2024-06-01"
+      "endDate": "2024-02-01"
+    },
+    {
+      "name": "High Precision Ground Texture Mapping and Localization",
+      "summary": "Design the ground texture mapping system for the degenerate scenarios, e.g., open area and corridor.",
+      "highlights": ["Image Processing", "Pose Graph Optimization", "GPU Acceleration"],
+      "startDate": "2024-02-01",
+      "endDate": ""
     }
   ],
   "publications": [
+    {
+      "name": "Map updating method and apparatus, and autonomous moving apparatus and storage medium.",
+      "publisher": "[patent] WO2025050384A1, WIPO. CN121311737A, CNIPA. Under review by USPTO.",
+      "releaseDate": "2023",
+      "url": ""
+    },
     {
       "name": "Chance Constrained Simultaneous Path Planning and Task Assignment with Bottleneck Objective",
       "publisher": "2021 IEEE International Conference on Robotics and Automation (ICRA)",

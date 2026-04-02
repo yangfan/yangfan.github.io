@@ -83,8 +83,8 @@ Goal: loading configuration, map loading, imu initialization, estimate the initi
 3. IMU initialization: given the static state of robot, compute the sample mean and variance of accerometer and gyroscope, obtain bias and covariance of acc and gyr, gravity.
 4. initial state estimation:
    1. wait for the first valid gnss data
-   2. use gnss position as the initial position, map cloud as target, current scan as source, do NDT alignment with decreasing resolution and different orientation.
-   3. the alignment result, zero velocity and imu configuration are used as the initial state of ESKF.
+   2. use gnss position as the initial position, map cloud as target, current scan as source, do grid search using NDT alignment with decreasing resolution and different orientation.
+   3. the initial state of ESKF includes global pose from grid search, zero velocity and imu configuration.
 
 - [source code](https://github.com/yangfan/localization/tree/master/src/localizer/LocalizerEskf.cpp)
 
@@ -116,7 +116,7 @@ Goal: based on the predicted pose from eskf, optimize the pose such that the res
 
 ### Dynamic map loading
 
-Goal: to save memory usage, load and unload map based on current position. This is processing in seperate thread.
+Goal: to save memory usage, load and unload map based on current position. This is processed in a seperate thread.
 
 #### Procedure
 
@@ -146,7 +146,7 @@ Goal: reduce delay at the dynamic loading caused by building kd tree for NDT tar
 #### Procedure
 
 1. two seperate thread: a. ESKF state estimation. b. dynamic map loading.
-2. the main thread is for the ESKF state estimation. After the correction step, the main thread wakes up dynamic map loading thread by c++ `std::conditio_variable if map change is needed.
+2. the main thread is for the ESKF state estimation. After the correction step, the main thread wakes up dynamic map loading thread via c++ `std::conditio_variable` if map change is needed.
 3. the dynamic map loading thread is a event loop waiting for the notification from the main thread. Once woke up, it update viewer and kd tree of NDT target.
 4. NDT object is the data modified by both thread. A `mutex` is used for NDT object to avoid data race.
 
