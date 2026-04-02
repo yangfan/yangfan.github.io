@@ -197,7 +197,7 @@ ninja.data = [{
               window.location.href = "/projects/computer-vision/yolo/";
             },},{id: "projects-eskf-lidar-inertial-odometry",
           title: 'ESKF Lidar Inertial Odometry',
-          description: "This project implements 3D lidar inertial odometry based on error state kalman filter. Given 3D lidar scan and IMU sensor data, the goal is to create 3D point cloud map of the environment. The key elements include ESKF for state estimation, point cloud registration estimating transformation between two point clouds, and lio that creating and updating 3D point cloud map. Two types of LIO is implemented, namely loosely coupled LIO which only takes point cloud alignment as the observation in ESKF and tightly coupled LIO which takes residuals of point cloud alignment as the observation function of ESKF.",
+          description: "This project implements 3D lidar inertial odometry based on error state kalman filter. Given 3D lidar scan and IMU sensor data, the goal is to create 3D point cloud map of the environment. The key elements include ESKF for state estimation, point cloud registration estimating transformation between two point clouds, and lidar-inertial odometry creating keyframes which form the 3D point cloud map. Two types of LIO is implemented, namely loosely coupled LIO which only takes point cloud alignment as the observation in ESKF and tightly coupled LIO which takes residuals of point cloud alignment as part of the ESKF observation model.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/lidar-inertial-odometry/lio3d/";
             },},{id: "projects-imu-preintegration-based-lidar-inertial-odometry",
@@ -237,12 +237,12 @@ ninja.data = [{
               window.location.href = "/projects/mapping/grid-map/";
             },},{id: "projects-2d-slam-system-for-amr",
           title: '2D SLAM System for AMR',
-          description: "This project implements a 2D SLAM system for AMR (autonomous mobile robots). The system includes lidar odometry, map management and loop closure. Given 2D lidar scan, robot estimate the pose by scan matching with a map or scan. The lidar scan is then integrated to the map. To reduce the impact of the accumulated error, instead of one single map, a sequence of submaps is created. Each submap is an occupancy grid map. The real-time loop closure module is implemented to improve the global consistency.",
+          description: "This project implements a 2D Lidar SLAM system for AMR (autonomous mobile robots). The system includes lidar odometry, map management and loop closure. Given 2D lidar scan, robot estimate the pose by scan matching with a map or scan. The lidar scan is then integrated to the map. To reduce the impact of the accumulated error, instead of one single map, a sequence of submaps are created. Each submap is formatted as an occupancy grid map. The real-time loop closure module is implemented to find the spatial relationship between current frame and previous submaps, and improve the global consistency by performing global optimization with loop closure edges.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/mapping2d/mapping2d/";
             },},{id: "projects-3d-point-cloud-mapping",
           title: '3D Point Cloud Mapping',
-          description: "This project designs and implements a complete pipline of the 3D point cloud mapping system. The system is comprised of two parts: online frontend module and offline backend module. The frontend is responsible for collecting sensor data (3d lidar scan, imu data, gnss data), creating keyframes and saving point cloud data. The backend is then executed to reduce accumulated error and improve the consistency of the map. The main job of the backend is to detect and evaluate the loop closure, eliminate sensor data outliers and optimize the keyframe poses and partition the map.",
+          description: "This project designs and implements a complete pipline of the 3D point cloud mapping system. The system is comprised of two parts: online frontend module and offline backend module. The frontend is responsible for collecting sensor data (3d lidar scan, imu data, gnss data), creating keyframes and pose graph structure, and saving point cloud data. The backend then perform pose graph optimization to reduce accumulated error and improve the consistency of the map. The main job of the backend is to detect and evaluate the loop closure, eliminate sensor data outliers and optimize the keyframe poses and partition the map.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/mapping3d/mapping3d/";
             },},{id: "projects-simulation-of-multiple-robots-in-warehouse",
@@ -260,7 +260,7 @@ ninja.data = [{
         title: 'CV',
         section: 'Socials',
         handler: () => {
-          window.open("/assets/pdf/cv_fanyang.pdf", "_blank");
+          window.open("/assets/pdf/fanyang_cv2026.pdf", "_blank");
         },
       },{
         id: 'social-email',
