@@ -2,7 +2,7 @@
 layout: page
 title: 2D SLAM System for AMR
 description: |
-  This project implements a 2D SLAM system for AMR (autonomous mobile robots). The system includes lidar odometry, map management and loop closure. Given 2D lidar scan, robot estimate the pose by scan matching with a map or scan. The lidar scan is then integrated to the map. To reduce the impact of the accumulated error, instead of one single map, a sequence of submaps is created. Each submap is an occupancy grid map. The real-time loop closure module is implemented to improve the global consistency.
+  This project implements a 2D Lidar SLAM system for AMR (autonomous mobile robots). The system includes lidar odometry, map management and loop closure. Given 2D lidar scan, robot estimate the pose by scan matching with a map or scan. The lidar scan is then integrated to the map. To reduce the impact of the accumulated error, instead of one single map, a sequence of submaps are created. Each submap is formatted as an occupancy grid map. The real-time loop closure module is implemented to find the spatial relationship between current frame and previous submaps, and improve the global consistency by performing global optimization with loop closure edges.
 
 img: /assets/img/projects/mapping2d/submap.gif
 importance: 1
@@ -10,7 +10,7 @@ category: 2D Mapping
 github: https://github.com/yangfan/mapping2d
 ---
 
-This project implements a 2D SLAM system for AMR (autonomous mobile robots). The system includes lidar odometry, map management and loop closure. Given 2D lidar scan which includes the rotation angle and distance to the obstacle, robot estimate the pose by scan matching with a map or scan. The map is then updated by integrating the scan observed at the estimated pose. To reduce the impact of the accumulated error, instead of one single map, a sequence of submaps (occupancy grid map) is created. Each submap is treated as a basic element (i.e., vertex) in the pose graph optimization. The residuals of optimization (i.e., edge) include the relative motion between consecutive submaps and the the spatial relationship between temporally distinct submaps detected and estimated by the real-time loop closure system.
+This project implements a 2D Lidar SLAM system for AMR (autonomous mobile robots). The system includes lidar odometry, map management and loop closure. Given 2D lidar scan which includes the rotation angle and distance to the obstacle, robot estimate the pose by scan matching with a map or scan. The map is then updated by integrating the scan observed at the estimated pose. To reduce the impact of the accumulated error, instead of one single map, a sequence of submaps (occupancy grid map) are created. Each submap is treated as a basic element (i.e., vertex) in the pose graph optimization. The residuals of optimization (i.e., edge) include the relative motion between consecutive submaps and the the spatial relationship between temporally distinct submaps which are detected and estimated by the real-time loop closure system.
 
 ### Components
 
@@ -75,13 +75,13 @@ procedures:
 
 1. build a kd tree for the target point cloud: for each target point, compute 2D euclidean coodinates, i.e., $x_{i, t} = r * \cos\theta, \ y_{i, t} = r * \sin\theta$ and add it to kd tree.
 
-2. Compute transform $p = (x_s, y_s, \alpha_s) \in SE(2)$ by solve least square problem min $ \sum_i \left \lVert e_i \right \rVert_2 $ using Gauss-Newton method. A initial guess should be given.
+2. Compute transform $p = (x_s, y_s, \alpha_s) \in SE(2)$ by solving least square problem min $ \sum_i \left \lVert e_i \right \rVert_2 $ using Gauss-Newton method. A initial guess should be given.
 
-   - for eacch source point $(r_{i, s}, \theta_{i, s})$, compute the euclidean coordinates and find the nearest neighbors from target cloud $(x_{i, t}, y_{i, t})$.
+   - for each source point $(r_{i, s}, \theta_{i, s})$, compute the euclidean coordinates and find the nearest neighbors from target cloud $(x_{i, t}, y_{i, t})$.
    - compute error: $e_i = [x_{s} + r_{i, s} * \cos(\alpha_{s} + \theta_{i, s}) - x_{i, t}, \ y_{s} + r_{i, s} * \sin(\alpha_{s} + \theta_{i, s}) - y_{i, t}]^T$
    - compute Jacobian:
      $$J_i =  \begin{bmatrix}1 &0  &-r_{i, s} * \sin(\alpha_s + \theta_{i, s})\\0 & 1 & \hphantom{n} r_{i, s} * \cos(\alpha_s + \theta_{i, s})\end{bmatrix}$$
-   - solve $\sum_i J_i^T J \Delta * p = \sum_i -J^T_i e_i$
+   - solve $\sum_i J_i^T J_i \Delta  p = \sum_i -J^T_i e_i$
    - update transform $p \leftarrow p + \Delta p$
    - go back to the first step until converge.
 
@@ -109,7 +109,7 @@ procedures:
    - for eacch source point $(r_{i, s}, \theta_{i, s})$, compute the euclidean coordinates and find nearest k neighbors from target cloud and compute a fitting line, i.e., $ax + by + c = 0$.
    - compute error: $e_i = a (x_{s} + r_{i, s} * \cos(\alpha_{s} + \theta_{i, s})) + b (y_s + r_{i, s} \sin(\alpha_s + \theta_{i,s})) + c$
    - compute Jacobian: $J_i = [a, b, -a * r_{i, s} * \sin(\alpha_s + \theta_{i, s}) + b * r_{i,s} * \cos(\alpha_s + \theta_{i, s})]$
-   - solve $\sum_i J_i^T J \Delta * p = \sum_i -J^T_i e_i$
+   - solve $\sum_i J_i^T J_i \Delta p = \sum_i -J^T_i e_i$
    - update transform $p \leftarrow p + \Delta p$
    - go back to the first step until converge.
 
@@ -133,15 +133,15 @@ procedures:
 
 1. Build likelihood field of target cloud in which each entry represents the distance to the closest occupied cell hit by target scan point.
 
-   - create a template patch describing the local likelihood field in which only the center is occupied.
+   - create a template patch describing the local likelihood field in which the center is occupied.
    - for each target scan point, use the local template patch to update the global likelihood field. The entry is updated only if the value in local patch is smaller.
 
 2. Compute transform $p = (x_s, y_s, \alpha_s) \in SE(2)$ by solve least square problem min $ \sum_i \left \lVert e_i \right \rVert_2 $ using Gauss-Newton method. A initial guess should be given.
    - for eacch source point $(r_{i, s}, \theta_{i, s})$, compute the world coordinates $p_{i, w}$ on likelihood field and get distance value $g(p_{i, w})$.
    - compute error: $e_i = g(x_s + r_{i, s} * \cos(\alpha_s + \theta_{i,s}), \ y_s + r_{i, s} * \sin(\alpha_s + \theta_{i,s}))$
-   - compute Jacobian $J_i = \beta \cdot [\nabla_x g, \nabla_y g, -\nabla_x g * r_s * \sin(\alpha_s + \theta_{i, s}) + \nabla_y g * r_s * \cos(\alpha_s + \theta_{i, s})]$, where $\beta$ is resolution of likelihood (unit: cell per meter)
+   - compute Jacobian $J_i = \frac{\partial g}{\partial p_{i, w}} \frac{\partial p_{i, w}}{\partial p} = \beta \cdot [\nabla_x g, \nabla_y g, -\nabla_x g * r_s * \sin(\alpha_s + \theta_{i, s}) + \nabla_y g * r_s * \cos(\alpha_s + \theta_{i, s})]$, where $\beta$ is resolution of likelihood (unit: cell per meter)
    - $\nabla_x g = \frac{g(x + \delta x, \ y) - g(x - \delta x, \ y)}{2\delta x}$, $\nabla_y g = \frac{g(x, \ y + \delta y) - g(x, \ y - \delta y)}{2\delta y}$
-   - solve $\sum_i J_i^T J \Delta * p = \sum_i -J^T_i e_i$
+   - solve $\sum_i J_i^T J_i \Delta p = \sum_i -J^T_i e_i$
    - update transform $p \leftarrow p + \Delta p$
    - go back to the first step until converge.
 
@@ -163,7 +163,7 @@ procedures:
 
 ### Submap
 
-Goal: create 2D occupancy grid map in which each entry represents status of the space [0-255] from occupied to free. To limit the memory usage and enable the optimization and loop closure in the backend, submaps are created sequentially and each pair of consecutive submaps share a number of frames.
+Goal: create 2D occupancy grid map in which each entry represents status of the space [0-255] from occupied to free. To limit the memory usage and facilitate the optimization and loop closure in the backend, submaps are created sequentially and each pair of consecutive submaps share a number of frames.
 
 The submap contains an occupancy grid map, likelihood field and an array of inserted keyframes.
 

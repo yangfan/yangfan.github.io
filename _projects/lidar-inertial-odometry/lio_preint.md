@@ -28,7 +28,7 @@ Goal: Compute IMU preintegration measurements, i.e., rotation, velocity, positio
 1. Update preintegration measurement $\Delta \tilde{R}\_{ij},  \Delta \tilde{v}\_{ij}, \Delta \tilde{p}\_{ij}$ based on received IMU readings.
 2. Update covariance of measurement noise, i.e., $\Sigma_{ij} \in \mathbb{R}^{9 \times 9}$ based on covariance at previous timestep $\Sigma_{i j-1}$ and covariance of IMU sensor $\Sigma_{\eta} \in \mathbb{R}^{6 \times 6}$.
 3. Update Jacobian for bias update. The Jacobian describes how the measurement change due to a change in bias estimate. All updates are computed incrementally.
-4. IMU preintegration measurements are used for creating pose graph optimization problem in which the residuals are defined as difference between measurement and measurement model.
+4. IMU preintegration measurements are used for creating pose graph optimization problem in which the residuals are defined as difference between measurement and observation model.
    - $r_{\Delta R_{ij}} = \mathrm{Log}(\Delta \tilde{R}_{ij}^T R^T_i R_j)$
    - $r_{\Delta v_{ij}} = R^T_i (v_j - v_i - g \Delta t_{ij}) - \Delta \tilde{v}_{ij}$
    - $r_{\Delta p_{ij}} = R^T_i (p_j - p_i - v_i \Delta t_{ij} - 0.5 g \Delta t_{ij}^2) - \Delta \tilde{p}_{ij}$
@@ -47,7 +47,7 @@ Goal: estimate the current global pose by NDT alignment of source and target poi
 
 1. Given the initial target point cloud, grid resolution (voxel cell size), align each scan point to a voxel cell and compute the mean and variance of scan point positions for each voxel cell.
 2. Align source point cloud to target point cloud by solving least square problem. The residual is the sum of the difference between the transformed source scan point and target point, i.e., $\sum_i \left \lVert  R * p_{si} + t - p_{ti} \right \rVert_{\Sigma_i}$
-3. The solution is used as a SE(3) observation in the pose graph optimization.
+3. The solution is used as a SE(3) observation for the pose graph optimization.
 4. If current frame is determined as a keyframe, add source point cloud to NDT matcher and update target grid statistics incrementally. See more detailed description in [LIO3D](https://github.com/yangfan/lio3d).
 
 #### Code
@@ -64,22 +64,22 @@ Goal: Build pose graph optimizaton with g2o. Estimate current states such that t
 
 2. Define edges:
 
-   - preintegration factors: $[\mathbf{r}^T_{\Delta R_{ij}}, \ \mathbf{r}^T_{\Delta v_{ij}}, \ \mathbf{r}^T_{\Delta p_{ij}}]^T$, jacobian see reference[1]. The information matrix is computed from the covariance of measurement noise. To reduce the impact of outliers, the Huber robust kernel is used.
+   - preintegration factors: $[\mathbf{r}^T_{\Delta R_{ij}}, \ \mathbf{r}^T_{\Delta v_{ij}}, \ \mathbf{r}^T_{\Delta p_{ij}}]^T$, jacobian see reference [On-Manifold Preintegration for Real-Time Visual-Inertial Odometry](https://arxiv.org/pdf/1512.02363). The information matrix is computed from the covariance of measurement noise. To reduce the impact of outliers, the Huber robust kernel is used.
    - prior factors:
      $[\mathrm{Log}(R_{i,prior}^T R_i)^T, \ (p_i - p_{i, prior})^T, (v_i - v_{i, prior})^T, \ (b_{ai} - b_{ai, prior})^T, \ (b_{gi} - b_{gi, prior})^T ]^T$. $\mathrm{Jacobian} = \mathrm{diag}(J_r^{-1}(R_{i,prior}^T R_i),  \mathbf{I}_3, \mathbf{I}_3,  \mathbf{I}_3,  \mathbf{I}_3)$ The information matrix is computed by marginalization of the Hessian matrix from the last optimization.
    - NDT alignment:
-     $[\mathrm{Log}(R_{j,ndt}^T R_j)^T, (p_j - p_{j, ndt})^T]^T$
+     $[\mathrm{Log}(R_{j,ndt}^T R_j)^T, (p_j - p_{j, ndt})^T]^T$,
      $\mathrm{Jacobian} = \mathrm{diag}(J_r^{-1}(R_{i,gnss}^T R_j), \ \mathbf{I}_3)$
 
    - Gyroscope Bias factor: $b_{g, j} - b_{g, i}$, jacobian = $[-\mathbf{I}_3, \mathbf{I}_3]$
    - Accelerometer Bias factor: $b_{a, j} - b_{a, i}$, jacobian = $[-\mathbf{I}_3, \mathbf{I}_3]$
 
-3. Solve optimization problem. Asign optimizaed states to current states.
+3. Solve optimization problem by Levenberg–Marquardt algorithm. Asign optimizaed states to current states.
 
 4. Compute the information matrix of the prior factor for the next optimization by marginalizing the vertices at time step i.
 
-   - Compute the approximate Hessian matrix $H = J^T \Sigma^{-1} J \in \mathbb{R}^{30 \times 30}$ where
-     $$J_i =  \begin{bmatrix}A &B  \\B^T &C  \end{bmatrix}$$
+   - Compute the approximate Hessian matrix $H = J^T \Sigma^{-1} J \in \mathbb{R}^{30 \times 30}$ which
+     has the following structure $$\begin{bmatrix}A &B  \\B^T &C  \end{bmatrix}$$.
 
    - The matrices $A, B \in \mathbb{R}^{15 \times 15}$ are the components of Hessian related to state at time step i.
    - Eliminate first 15 rows and cols by Schur complement, i.e. $\tilde{C} = C - B^T A^+ B \in \mathbb{R}^{15 \times 15}$, where $A^+$ denote the pseudo inverse of $A$
@@ -100,7 +100,7 @@ Goal: Estimate the states at each time step given synchronized lidar and imu dat
 
 2. Add imu reading to IMU preintegrator and update imu preintegration measurment and covariance of noises incrementally.
 
-3. Undistort lidar scan influenced by motion. The undistortion computes the global pose of lidar sensor when scan point is observed ($T_{WLi}$) by interoplating imu poses, and then transform scan point to the last imu reading ($p_{Le}$). More precise $p_{Le} = T_{LI} * T_{IeW} * T_{WIi} * T_{IL} * p_{Li}$
+3. Undistort lidar scan by motion compensation. The undistortion computes the global pose of lidar sensor when scan point is observed ($T_{WLi}$) by interoplating imu poses, and then transform scan point to the last imu reading ($p_{Le}$). More precise $p_{Le} = T_{LI} * T_{IeW} * T_{WIi} * T_{IL} * p_{Li}$
 
 4. Estimate current pose by NDT alignment. The initial guess is predicted from IMU preintegrator.
 
@@ -139,7 +139,7 @@ Goal: Estimate the states at each time step given synchronized lidar and imu dat
 
 ### Data synchronization
 
-Goal: Match point cloud data with imu readings such that the lidar points from an entire scan is covered imu readings. The motion of the lidar sensor during the scan can therefore be estimated by interpolating the nearest pair of imu readings.
+Goal: Match point cloud data with imu readings such that the duration of an entire point cloud scan is covered imu readings. The pose of the lidar sensor during the scan can therefore be estimated by interpolating the nearest pair of imu readings.
 
 1. put incomming imu and lidar data to deques.
 

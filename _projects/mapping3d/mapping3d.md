@@ -2,7 +2,7 @@
 layout: page
 title: 3D Point Cloud Mapping
 description: |
-  This project designs and implements a complete pipline of the 3D point cloud mapping system. The system is comprised of two parts: online frontend module and offline backend module. The frontend is responsible for collecting sensor data (3d lidar scan, imu data, gnss data), creating keyframes and saving point cloud data. The backend is then executed to reduce accumulated error and improve the consistency of the map. The main job of the backend is to detect and evaluate the loop closure, eliminate sensor data outliers and optimize the keyframe poses and partition the map.
+  This project designs and implements a complete pipline of the 3D point cloud mapping system. The system is comprised of two parts: online frontend module and offline backend module. The frontend is responsible for collecting sensor data (3d lidar scan, imu data, gnss data), creating keyframes and pose graph structure, and saving point cloud data. The backend then perform pose graph optimization to reduce accumulated error and improve the consistency of the map. The main job of the backend is to detect and evaluate the loop closure, eliminate sensor data outliers and optimize the keyframe poses and partition the map.
 
 img: /assets/img/projects/mapping3d/local_view.gif
 importance: 1
@@ -10,7 +10,7 @@ category: 3D Mapping
 github: https://github.com/yangfan/offline_mapping
 ---
 
-This project designs and implements a complete pipline of the 3D point cloud mapping system. The system is comprised of two parts: online frontend module and offline backend module. The frontend is responsible for collecting sensor data (3d lidar scan, imu data, gnss data), creating keyframes and saving point cloud data. The lidar-inertial odometry created in previous project is used in the frontend. The backend is then executed to reduce accumulated error and improve the consistency of the map. The main job of the backend is to detect and evaluate the loop closure, eliminate sensor data outliers and optimize the keyframe poses and partition the map. The map is partitioned into a number of smaller submaps to facilitate the dynamic map loading in localization module which saves memory usage and accelerates localization.
+This project designs and implements a complete pipline of the 3D point cloud mapping system. The system is comprised of two parts: online frontend module and offline backend module. The frontend is responsible for collecting sensor data (3d lidar scan, imu data, gnss data), creating keyframes and saving point cloud data. The lidar-inertial odometry created in previous project is used in the frontend. The backend then perform pose graph optimization to reduce accumulated error and improve the consistency of the map. The main job of the backend is to detect and evaluate the loop closure, eliminate sensor data outliers and optimize the keyframe poses and partition the map. The map is partitioned into a number of smaller submaps to facilitate the dynamic map loading in localization module which saves memory usage and accelerates localization.
 
 ### Components
 
@@ -45,7 +45,7 @@ This project designs and implements a complete pipline of the 3D point cloud map
 
 ### Front End
 
-Goal: Use IESKF Lidar IMU Odometry to create Keyframes with timestamp lio pose, scan, gnss pose (not used in lio), etc.
+Goal: Use IESKF Lidar IMU Odometry to create Keyframes with timestamp, lio estimated pose, point cloud, gnss pose, etc.
 
 #### Procedure
 
@@ -55,9 +55,9 @@ Goal: Use IESKF Lidar IMU Odometry to create Keyframes with timestamp lio pose, 
     3. use the position of first valid GNSS data (status >= STATUS_FIX) as origin
     4. store GNSS data with timestamp in array
 2.  Run ieskf lidar imu odometry
-    1. add point cloud data and imu data to lio
-    2. if new keyframe was created, (a) store pointcloud as pcd file , (b) match pointcloud data with gnss data, store gnss position/pose in keyframe if it's valid
-    3. store all keyframe data in txt file
+    1. add point cloud data and imu data to lio, estimate current pose by NDT alignment.
+    2. if the relative motion between last keyframe and current frame is over the threshold, a new keyframe was created with following operations: (a) store pointcloud as pcd file , (b) match keyframe with gnss data by linear interpolation, (c) store gnss position/pose of keyframe if it's valid.
+    3. store all keyframe data in file.
 
 #### Code
 
@@ -85,21 +85,21 @@ Goal: Use IESKF Lidar IMU Odometry to create Keyframes with timestamp lio pose, 
 
 ### Loop Closure
 
-Goal: find keyframes that are spatially close but created at different times
+Goal: find keyframes that are spatially related but created at different times.
 
 #### Procedure
 
-1. Find Candidate
+1. Find Candidates
    1. go through all keyframe pairs
    2. skip keyframes that were temporally close
    3. skip keyframes that are close to previous detected loop keyframe pairs
-   4. candidate detected if the distance is small enough
+   4. candidate detected if the distance of keyframe pair is small enough
 2. evaluate candidates: scan (query keyframe) to map (submap of target keyframe)
-   - build submap of keyframes temporally close to target keframe
-   - get pointcloud of query keyframe from pcd file
+   - build a submap from keyframes temporally close to the target keframe
+   - load pointcloud of query keyframe from pcd file
    - match scan to submap with ascending resolutions
    - compute score of NDT alignment
-3. remove outliers with low score
+3. remove candidates with low score
 
 #### Code
 
@@ -109,7 +109,7 @@ Goal: find keyframes that are spatially close but created at different times
 
   - run loop closure detection: `./bin/main_loop`
 
-- pose graph structure:
+- pose graph structure with loop closure edges:
 
   <div class="row justify-content-center">
       <div class="col">
@@ -128,15 +128,16 @@ Goal: Refine keyframe pose by pose graph optimization
 
 #### Procedure
 
-1.  ICP alignment between gnss and lio trajectory
+1.  ICP alignment between GNSS and lio trajectory
 2.  Build Pose graph
     - create optimizer
     - create vertices: keyframes
-    - create edges: gnss position, relative motion between two keyframes based on lio, loop closure constraint between two keyframes that are physcially close.
+    - create edges: GNSS position, relative motion between two keyframes based on lio, loop closure constraint between two keyframes that are spatially related.
+    - set up robust kernel for GNSS edges and loop edges.
 3.  Solve optimization
-4.  Remove outliers (disable outlier edges), i.e., chi2 > robust kernel delta, optimization again.
-5.  Solve optimization again
-6.  save results: asign optimization poses to keyframes, save keyframes info to txt
+4.  Remove outliers (disable outlier edges), i.e., chi2 > robust kernel delta.
+5.  Solve optimization again.
+6.  save results: asign optimization poses to keyframes, save keyframes info to txt.
 
 #### Code
 
@@ -192,9 +193,9 @@ Goal: Split map into a grid of submaps
 #### Procedure
 
 1. Iterate each keyframe
-   1. iterate each lidar point: compute submap id, i.e. `id = int ((pos - origin.pos) * resolution)`
-   2. create new submap if it hasn't been created yet, otherwise insert to the exsiting submap
-2. Save each submap including pointcloud and submap id.
+   1. iterate each lidar point: compute submap id, i.e. `id = int ((pos - origin.pos) * resolution)`.
+   2. create new submap if it hasn't been created yet, otherwise insert point cloud to the exsiting submap.
+2. Save submaps with pointcloud and submap id.
 
 #### Code
 
@@ -220,7 +221,7 @@ Goal: Split map into a grid of submaps
 1. create keyframes scan (pcd files) and keyframes info (txt file): `./bin/main_frontend`
 2. (optional) merge all keyframe scan based on lio pose: `./bin/merge_kfs --info_file=kf_info.txt --pose_type=lio`
 3. (optional) visualize keyframes scan: `pcl_viewer ./data/output/keyframes/pcd/map.pcd`
-4. generate files: `kf_info.txt`, `id.pcd` pointcloud.
+4. generate files: `kf_info.txt`, `<keyframe id>.pcd` pointcloud.
 
 #### Optimization stage 1
 
