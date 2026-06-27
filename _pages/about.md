@@ -26,7 +26,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am currently working as a Robotics Navigation Engineer at Midea Emerging Technology Center (METC) in San Jose. My responsibilities include development of multi-modality sensor fusion-based localization, state estimation and mapping system, multi-objects perception, tracking and sematic based scene understanding algorithm using point cloud data, image data, and inertial sensor.
+I am a software engineer in Uber AV Labs. My responsibility is to design and implement the batch pipeline for HD Maps generation.
 
 I received my PhD degree at Stony Brook University under the supervision of Prof. Nilanjan Chakraborty in Interacting Robotic Systems Laboratory. We investigate novel methodologies of task allocation, path planning with uncertain payoff and resource consumption for multi-robot systems.
 
